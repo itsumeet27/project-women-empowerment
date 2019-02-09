@@ -2,14 +2,16 @@
     <form #mform="ngForm" (ngSubmit)="add(mform)" class="form table-responsive">
         <table class="table table-striped table-bordered" style="font-family: Roboto">
             <thead>
-                <th><b>Movie Name</b></th>
-                <th><b>Year</b></th>
+                <tr>
+                    <th><b>Movie Name</b></th>
+                    <td><input [(ngModel)]="movie.name" name="name" /></td>
+                </tr>
+                <tr>
+                    <th><b>Year</b></th>
+                    <td><input [(ngModel)]="movie.year" name="year" /></td>
+                </tr>                
             </thead>
             <tbody>
-                <tr>
-                    <td><input [(ngModel)]="movie.name" name="name" /></td>
-                    <td><input [(ngModel)]="movie.year" name="year" /></td>
-                </tr>
                 <tr>
 					<td><input type="submit" value="Add" class="btn btn-md btn-default" /> </td>
 				</tr>
