@@ -1,49 +1,50 @@
-<!-- Navbar -->
-<style type="text/css">
-    *{
-        font-family: Arial, Helvetica, sans-serif;
-        margin:0%;
-        padding: 0%;
-    }
-</style>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Ministry of Women & Child Welfare</a>
-  
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-  
-      <!-- Links -->
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/about']" title="About us">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/legislation']" title="Legislations & Policy">Legislations & Policy</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/step']" title="Support to Training and Employment Programme">STEP</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" title="Non-Governmental Organizations">NGO's</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" title="Frequently Asked Questions">FAQ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" title="Admin">Admin</a>
-        </li>
-      </ul>
-      <!-- Links -->
+<style type="text/css">
+  *{
+      font-family: Arial, Helvetica, sans-serif;
+      margin:0%;
+      padding: 0%;
+  }
+</style>
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#"><strong>MWCD</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/about']" title="About us">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/legislation']" title="Legislations & Policy">Legislations & Policy</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/step']" title="Support to Training and Employment Programme">STEP</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/ngo']" title="Non-Governmental Organizations">NGO's</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/faq']" title="Frequently Asked Questions">FAQ</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#" title="Admin">Admin</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/login']" title="User Login">Login</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <div class="md-form my-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          </div>
+        </form>
+      </div>
     </div>
-    <!-- Collapsible content -->
-  
-</nav>
-<!--/.Navbar-->
+  </nav>
+    <!-- Navbar -->
+    
+        
