@@ -1,0 +1,29 @@
+<div class="container">
+        <form #mform="ngForm" (ngSubmit)="add(mform)" class="form table-responsive"  onsubmit="return checkForm(this);">
+          <div class="container">
+           
+            <h2>User Login</h2>
+            <hr>
+          
+         
+    
+            <label for="username"><b>Username</b></label>
+            <input  [(ngModel)]="userlogin.username" type="text" placeholder="Enter Username" name="username" required>
+      
+            <label for="password"><b>Password</b></label>
+            <input [(ngModel)]="userlogin.password" type="password" placeholder="Enter Password" name="password" required>
+
+
+            <button type="submit" class="loginbtn" >LogIn</button>
+          </div>
+          
+          <div class="container register">
+            <p>Don't have an account? <a href="#">Register Here</a>.</p>
+          </div>
+        </form>
+    </div>
+    <script>
+      
+    </script>
+    <h3 class="text-center"> {{ response }} </h3>  
+    
