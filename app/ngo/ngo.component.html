@@ -1,0 +1,47 @@
+<style type="text/css">
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+        margin:0%;
+        padding: 0%;
+    }
+  </style>
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"><strong>Dashboard</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/ngo/criteria']" title="About us">Criteria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/organizations']" title="Legislations & Policy">Organizations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/funding-norms']" title="Support to Training and Employment Programme">Funding Norms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/ngo/registration']" title="Non-Governmental Organizations">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/status']" title="Frequently Asked Questions">Status</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/login']" title="User Login">Login</a>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="">
+        <router-outlet></router-outlet>
+    </div>
+      <!-- Navbar -->

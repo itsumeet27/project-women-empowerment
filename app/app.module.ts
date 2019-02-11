@@ -10,7 +10,7 @@ import { MainComponent } from './includes/main.component';
 import { LegislationComponent } from './pages/legislations.component';
 import { StepComponent } from './pages/step.component';
 import { AboutComponent } from './pages/about.component';
-import { NgoComponent } from './pages/ngo.component';
+import { NgoComponent } from './ngo/ngo.component';
 import { FaqComponent } from './pages/faq.component';
 import { AdminModule } from './admin/admin.module';
 import { StepModule } from './step/step.module';
@@ -27,7 +27,6 @@ import { LoginComponent } from './user/login.component';
     AboutComponent,
     LegislationComponent,
     StepComponent,
-    NgoComponent,
     FaqComponent,
     LoginComponent,
     FooterComponent
@@ -43,7 +42,6 @@ import { LoginComponent } from './user/login.component';
       { path: 'about', component: AboutComponent },
       { path: 'legislation', component: LegislationComponent },
       { path: 'step', component: StepComponent },
-      { path: 'ngo', component: NgoComponent },
       { path: 'faq', component: FaqComponent },
       { path: 'login', component: LoginComponent }
     ])
