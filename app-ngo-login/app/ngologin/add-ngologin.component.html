@@ -1,0 +1,27 @@
+<div class="container">
+        <form #mform="ngForm" (ngSubmit)="add(mform)" class="form table-responsive"  onsubmit="return checkForm(this);">
+          <div class="container">
+            <h1> NGO Login</h1>
+            <hr>
+    
+         <!--</div>-->
+    
+            <label for="username"><b>Username</b></label>
+            <input  [(ngModel)]="ngologin.username" type="text" placeholder="Enter Username" name="username" required>
+      
+            <label for="password"><b>Password</b></label>
+            <input [(ngModel)]="ngologin.password" type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit" class="registerbtn" >LogIn</button>
+          </div>
+          
+          <div class="container signin">
+            <p>Don't have an account? <a href="#">Register Here</a>.</p>
+          </div>
+        </form>
+    </div>
+    <script>
+      
+    </script>
+    <h3 class="text-center"> {{ response }} </h3>
+    
