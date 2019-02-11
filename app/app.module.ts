@@ -8,9 +8,7 @@ import { HeaderComponent } from './includes/header.component';
 import { FooterComponent } from './includes/footer.component';
 import { MainComponent } from './includes/main.component';
 import { LegislationComponent } from './pages/legislations.component';
-import { StepComponent } from './pages/step.component';
 import { AboutComponent } from './pages/about.component';
-import { NgoComponent } from './ngo/ngo.component';
 import { FaqComponent } from './pages/faq.component';
 import { AdminModule } from './admin/admin.module';
 import { StepModule } from './step/step.module';
@@ -26,7 +24,6 @@ import { LoginComponent } from './user/login.component';
     MainComponent,
     AboutComponent,
     LegislationComponent,
-    StepComponent,
     FaqComponent,
     LoginComponent,
     FooterComponent
@@ -41,12 +38,10 @@ import { LoginComponent } from './user/login.component';
     RouterModule.forRoot([
       { path: 'about', component: AboutComponent },
       { path: 'legislation', component: LegislationComponent },
-      { path: 'step', component: StepComponent },
       { path: 'faq', component: FaqComponent },
       { path: 'login', component: LoginComponent }
     ])
   ],
-  
   providers: [HttpClient],
   bootstrap: [AppComponent]
 })

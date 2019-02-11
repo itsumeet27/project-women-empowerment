@@ -3,38 +3,63 @@
         <h3 class="h3-responsive text-center p-3">STEP Registration</h3>
         <p class="text-center red-text">All fields marked with * are mandatory</p>
         <table class="table table-striped table-bordered">
-            <tbody>
+            <tbody class="md-form">
                 <tr>
-                    <th><label for="name"><b>Name*</b></label></th>
-                    <td><input [(ngModel)]="registration.name" name="name" type="text" pattern="[A-Za-z]" placeholder="Name" title="Enter only alphabets"/></td>
+                    <th><b>Name</b></th>
+                    <td>
+                        <input [(ngModel)]="registration.name" class="form-control" id="name" name="name" type="text" pattern="[A-Za-z]" placeholder="Enter Your Name" title="Enter only alphabets"/>
+                        <label for="name">Name<span class="text-danger"> *</span></label>
+                    </td>
                 </tr>
                 <tr>
-                    <th><label for="username"><b>UserName*</b></label></th>
-                    <td><input [(ngModel)]="registration.username" name="username" type="text" pattern="[A-Za-z]" placeholder="Enter Your Username" title="Enter only alphabets"/></td>
+                    <th><b>UserName</b></th>
+                    <td>
+                        <input [(ngModel)]="registration.username" class="form-control" name="username" id="username" type="text" pattern="[A-Za-z]" placeholder="Enter Your Username" title="Enter only alphabets"/>
+                        <label for="username">Username<span class="text-danger"> *</span></label>
+                    </td>
                 </tr>
                 <tr>
-                    <th><label for="password"><b>Password*</b></label></th>
-                    <td><input [(ngModel)]="registration.password" name="password" type="password" placeholder="Enter Your Password" /></td>
+                    <th><b>Password</b></th>
+                    <td>
+                        <input [(ngModel)]="registration.password" class="form-control" id="password" name="password" type="password" placeholder="Enter Your Password" />
+                        <label for="password">Password<span class="text-danger"> *</span></label>
+                    </td>
+                    
                 </tr>
                 <tr>
-                    <th><label for="confirmPassword"><b>ConfirmPassword*</b></label></th>
-                    <td><input [(ngModel)]="registration.confirmPassword" name="confirmPassword" type="password" placeholder="Re-Enter Your Password" /></td>
+                    <th><b>ConfirmPassword</b></th>
+                    <td>
+                        <input [(ngModel)]="registration.confirmPassword" class="form-control" name="confirmPassword" id="confirmPassword" type="password" placeholder="Re-Enter Your Password" />
+                        <label for="confirmPassword">ConfirmPassword<span class="text-danger"> *</span></label>
+                    </td>
                 </tr>
                 <tr>
-                    <th><label for="mobileNumber"><b>Mobile Number</b></label></th>
-                    <td><input [(ngModel)]="registration.mobileNumber" type="number" placeholder="Enter Your Mobile Number" name="mobileNumber" maxlength="10" minlength="10" required></td>
+                    <th><b>Mobile Number</b></th>
+                    <td>
+                        <input [(ngModel)]="registration.mobileNumber" class="form-control" type="number" id="mobileNumber" placeholder="Enter Your Mobile Number" name="mobileNumber" maxlength="10" minlength="10" required>
+                        <label for="mobileNumber">Mobile Number<span class="text-danger"> *</span></label>
+                    </td>
                 </tr>
                 <tr>
-                    <th><label for="birthDate"><b>Date Of Birth</b></label></th>
-                    <td><input [(ngModel)]="registration.birthDate" type="date" placeholder="Enter Date Of Birth" name="birthDate" required></td>
+                    <th><b>Date Of Birth</b></th>
+                    <td>
+                        <input [(ngModel)]="registration.birthDate" class="form-control" type="date" id="birthDate" placeholder="Enter Date Of Birth" name="birthDate" required>
+                        <label for="birthDate">Date of Birth<span class="text-danger"> *</span></label>
+                    </td>
                 </tr>
                 <tr>
-                    <th><label for="designation"><b>Designation</b></label></th>
-                    <td><input [(ngModel)]="registration.designation" type="text" placeholder="Enter designation" name="designation" required></td>
+                    <th><b>Designation</b></th>
+                    <td>
+                        <input [(ngModel)]="registration.designation" class="form-control" id="designation" type="text" placeholder="Enter Your Designation" name="designation" required>
+                        <label for="designation">Designation<span class="text-danger"> *</span></label>
+                    </td>
                 </tr>
                 <tr>
-                    <th><label for="salary"><b>Salary</b></label></th>
-                    <td><input [(ngModel)]="registration.salary" type="number" min="0" placeholder="Enter Current salary" name="salary" required></td>
+                    <th><b>Salary</b></th>
+                    <td>
+                        <input [(ngModel)]="registration.salary" class="form-control" type="number" id="salary" min="0" placeholder="Enter Current Salary" name="salary" required>
+                        <label for="salary">Salary<span class="text-danger"> *</span></label>
+                    </td>
                 </tr>
             </tbody>
             <tfoot>
@@ -42,7 +67,7 @@
                     <td><input type="submit" value="Submit" class="btn btn-md btn-success" /></td>
                     <td>
                         <div class="container signin">
-                            <p class="lead text-center">Already have an account? <a class="nav-link" [routerLink]="['/step/login']" class="signin">Log in</a>.</p>
+                            <p class="lead text-center">Already have an account? <a class="nav-link" [routerLink]="['/step/login']" class="text-primary">Log in</a>.</p>
                         </div>
                     </td>
                 </tr>
