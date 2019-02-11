@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HeaderComponent } from './includes/header.component';
+import { FooterComponent } from './includes/footer.component';
 import { MainComponent } from './includes/main.component';
 import { LegislationComponent } from './pages/legislations.component';
 import { StepComponent } from './pages/step.component';
@@ -17,6 +18,7 @@ import { NgoModule } from './ngo/ngo.module';
 import { LoginComponent } from './user/login.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import { LoginComponent } from './user/login.component';
     StepComponent,
     NgoComponent,
     FaqComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
