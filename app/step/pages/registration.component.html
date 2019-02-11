@@ -1,0 +1,53 @@
+<div class="container">
+    <form #mform="ngForm" (ngSubmit)="add(mform)" class="form table-responsive">
+        <h3 class="h3-responsive text-center p-3">STEP Registration</h3>
+        <p class="text-center red-text">All fields marked with * are mandatory</p>
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th><label for="name"><b>Name*</b></label></th>
+                    <td><input [(ngModel)]="registration.name" name="name" type="text" pattern="[A-Za-z]" placeholder="Name" title="Enter only alphabets"/></td>
+                </tr>
+                <tr>
+                    <th><label for="username"><b>UserName*</b></label></th>
+                    <td><input [(ngModel)]="registration.username" name="username" type="text" pattern="[A-Za-z]" placeholder="Enter Your Username" title="Enter only alphabets"/></td>
+                </tr>
+                <tr>
+                    <th><label for="password"><b>Password*</b></label></th>
+                    <td><input [(ngModel)]="registration.password" name="password" type="password" placeholder="Enter Your Password" /></td>
+                </tr>
+                <tr>
+                    <th><label for="confirmPassword"><b>ConfirmPassword*</b></label></th>
+                    <td><input [(ngModel)]="registration.confirmPassword" name="confirmPassword" type="password" placeholder="Re-Enter Your Password" /></td>
+                </tr>
+                <tr>
+                    <th><label for="mobileNumber"><b>Mobile Number</b></label></th>
+                    <td><input [(ngModel)]="registration.mobileNumber" type="number" placeholder="Enter Your Mobile Number" name="mobileNumber" maxlength="10" minlength="10" required></td>
+                </tr>
+                <tr>
+                    <th><label for="birthDate"><b>Date Of Birth</b></label></th>
+                    <td><input [(ngModel)]="registration.birthDate" type="date" placeholder="Enter Date Of Birth" name="birthDate" required></td>
+                </tr>
+                <tr>
+                    <th><label for="designation"><b>Designation</b></label></th>
+                    <td><input [(ngModel)]="registration.designation" type="text" placeholder="Enter designation" name="designation" required></td>
+                </tr>
+                <tr>
+                    <th><label for="salary"><b>Salary</b></label></th>
+                    <td><input [(ngModel)]="registration.salary" type="number" min="0" placeholder="Enter Current salary" name="salary" required></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><input type="submit" value="Submit" class="btn btn-md btn-success" /></td>
+                    <td>
+                        <div class="container signin">
+                            <p class="lead text-center">Already have an account? <a class="nav-link" [routerLink]="['/step/login']" class="signin">Log in</a>.</p>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>
+<h3 class='text-center text-success p-2'> {{ response }} </h3>
