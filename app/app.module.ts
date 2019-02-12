@@ -10,12 +10,10 @@ import { MainComponent } from './includes/main.component';
 import { LegislationComponent } from './pages/legislations.component';
 import { AboutComponent } from './pages/about.component';
 import { FaqComponent } from './pages/faq.component';
-import { AdminModule } from './admin/admin.module';
 import { StepModule } from './step/step.module';
 import { NgoModule } from './ngo/ngo.module';
 import { LoginComponent } from './user/login.component';
-
-
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -30,9 +28,9 @@ import { LoginComponent } from './user/login.component';
   ],
   imports: [
     BrowserModule,
+    AdminModule,
     FormsModule,
     HttpClientModule,
-    AdminModule,
     StepModule,
     NgoModule,
     RouterModule.forRoot([

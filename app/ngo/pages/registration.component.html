@@ -1,49 +1,89 @@
-<div class="container">
-    <form #mform="ngForm" (ngSubmit)="add(ngoform)" class="form table-responsive">
-        <h3 class="h3-responsive text-center p-3">NGO Registration</h3>
-        <p class="text-center red-text">All fields marked with * are mandatory</p>
-        <table class="table table-striped table-bordered">
-            <tbody>
-                <tr>
-                    <th><b>Name*</b></th>
-                    <td><input [(ngModel)]="registration.name" name="name" pattern="[A-Za-z]" placeholder="Name" title="Enter only alphabets"/></td>
-                </tr>
-                <tr>
-                    <th><b>UserName*</b></th>
-                    <td><input [(ngModel)]="registration.username" name="username" pattern="[A-Za-z]" placeholder="Enter Your Username" title="Enter only alphabets"/></td>
-                </tr>
-                <tr>
-                    <th><b>Password*</b></th>
-                    <td><input [(ngModel)]="registration.password" name="password" type="password" placeholder="Enter Your Password" /></td>
-                </tr>
-                <tr>
-                    <th><b>ConfirmPassword*</b></th>
-                    <td><input [(ngModel)]="registration.confirmPassword" name="confirmPassword" type="password" placeholder="Re-Enter Your Password" /></td>
-                </tr>
-                <tr>
-                    <th><b>Address*</b></th>
-                    <td><textarea [(ngModel)]="registration.address" name="address"></textarea></td>
-                </tr>
-                <tr>
-                    <th><b>Organization Type*</b></th>
-                    <td><input [(ngModel)]="registration.organizationType" name="orgType"/></td>
-                </tr>
-                <tr>
-                    <th><b>Contact No*</b></th>
-                    <td><input [(ngModel)]="registration.contactNo" name="contactNo" /></td>
-                </tr>
-                <tr>
-                    <th><b>Project in Charge*</b></th>
-                    <td><input [(ngModel)]="registration.projectInCharge" name="projectInCharge" /></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td><input type="submit" value="Submit" class="btn btn-md btn-success" /></td>
-                    <td></td>
-                </tr>
-            </tfoot>
-        </table>
-    </form>
+<style type="text/css">
+    #registration-step {
+        width: 100%;
+        background: url('assets/images/background.jpg')no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .register {
+        background: #ffffffbc;
+        border-radius: 5px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+</style>
+<div class="container-fluid" id="registration-step">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="register">
+                <h4 class="h4-responsive text-center p-3">Register as a NGO for contributing to Women Development</h4>
+                <p class="lead p-2">You can reap the following benefits once you register.</p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="register">
+                <form #mform="ngForm" (ngSubmit)="add(mform)" name="step-form" class="form table-responsive">
+                    <h3 class="h3-responsive text-center p-3">NGO Registration</h3>
+                    <p class="text-center red-text">All fields marked with * are mandatory</p>
+                    <table class="table table-striped table-condensed">
+                        <tbody class="md-form">
+                            <tr>
+                                <th> Name* </th>
+                                <td><input [(ngModel)]="registration.name" type="text" class="form-control" name="name"
+                                        pattern="[a-zA-Z]*" placeholder="Name" title="Enter only alphabets"
+                                        autofocus="true" required /></td>
+                            </tr>
+                            <tr>
+                                <th> UserName* </th>
+                                <td><input [(ngModel)]="registration.username" type="text" class="form-control"
+                                        name="username" pattern="[a-zA-Z]{1,15}" placeholder="Enter Your Username"
+                                        title="Enter only alphabets" required /></td>
+                            </tr>
+                            <tr>
+                                <th> Password* </th>
+                                <td><input [(ngModel)]="registration.password" class="form-control" name="password"
+                                        type="password" placeholder="Enter Your Password" required /></td>
+                            </tr>
+                            <tr>
+                                <th> ConfirmPassword* </th>
+                                <td><input [(ngModel)]="registration.confirmPassword" class="form-control"
+                                        name="confirmPassword" type="password" placeholder="Re-Enter Your Password"
+                                        required /></td>
+                            </tr>
+                            <tr>
+                                <th> Address* </th>
+                                <td><textarea [(ngModel)]="registration.address" class="form-control" name="address"
+                                        required></textarea></td>
+                            </tr>
+                            <tr>
+                                <th> Organization Type* </th>
+                                <td><input [(ngModel)]="registration.organizationType" type="text" class="form-control"
+                                        name="orgType" required /></td>
+                            </tr>
+                            <tr>
+                                <th> Contact No* </th>
+                                <td><input [(ngModel)]="registration.contactNo" type="text" class="form-control"
+                                        minlength="10" maxlength="10" (keypress)="keyPress($event)" name="contactNo"
+                                        required /></td>
+                            </tr>
+                            <tr>
+                                <th> Project in Charge* </th>
+                                <td><input [(ngModel)]="registration.projectInCharge" type="text" class="form-control"
+                                        name="projectInCharge" required /></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><input type="submit" value="Submit" class="btn btn-md btn-success" /></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <h3 class='text-center text-success p-2'> {{ response }} </h3>
