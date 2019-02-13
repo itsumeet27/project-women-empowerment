@@ -43,8 +43,13 @@ export class RegistrationComponent implements OnInit {
                 data => {
                     //Take the response from server and storing in string variable
                     this.response = data['status'];
+                    this.reloadPage();
                 }
             );
         }
+    }
+
+    reloadPage() {
+        window.location.reload();
     }
 }
