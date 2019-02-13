@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit {
     constructor(private ngs: RegistrationService) {
 
     }
-    add(ngoform) {
+    add() {
         let confirm = true;
         if (this.registration.confirmPassword != this.registration.password) {
             confirm = false;

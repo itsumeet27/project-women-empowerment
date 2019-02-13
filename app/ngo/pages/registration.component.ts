@@ -29,7 +29,7 @@ export class RegistrationComponent implements OnInit {
     }
 
 
-    add(ngoform) {
+    add() {
 
         let confirm = true;
         if (this.registration.confirmPassword != this.registration.password) {
