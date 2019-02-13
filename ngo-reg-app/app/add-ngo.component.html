@@ -1,0 +1,85 @@
+<body>
+<script>
+        var password = document.getElementById("password"), confirmPassword = document.getElementById("confirmPassword");
+
+          function validatePassword(){
+                if(password.value != confirmPassword.value) {
+                  confirmPassword.setCustomValidity("Passwords Don't Match");
+                } else {
+                  confirmPassword.setCustomValidity('');
+                }
+              }
+        
+        password.onchange = validatePassword;
+        confirmPassword.onkeyup = validatePassword;
+        </script>
+
+<div class="container">
+    <form #mform="ngForm" (ngSubmit)="add(ngoform)" class="form table-responsive" ngNativeValidate>
+        <p>All fields marked with * are required</p>
+    
+                    <fieldset>
+                        <legend>Organization Details</legend>
+                    <label for="name"><b>Name *</b></label>
+                    <input [(ngModel)]="ngo.name" name="name" type="text" pattern="[A-Za-z]" placeholder="Name" title="Enter only alphabets" autofocus required /><br><br>
+
+                    <label for="username"><b>UserName *</b></label>
+                    <input [(ngModel)]="ngo.username" name="username" type="text"  placeholder="Enter Your Username" title="Enter only alphabets" required/><br><br>
+
+                    <label for="password"><b>Password *</b></label>
+                    <input [(ngModel)]="ngo.password" id="password" name="password" type="password" placeholder="Enter Your Password" /><br><br>
+
+                    <label for="confirmPassword"><b>ConfirmPassword *</b></label>
+                    <input [(ngModel)]="ngo.confirmPassword" id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-Enter Your Password" required/><br><br>
+<!--
+                    <label for="address"><b>Address *</b></label>
+                    <textarea [(ngModel)]="ngo.address" type="text" name="address" required></textarea><br><br>
+
+                    <label for="organizationType"><b>OrganizationType *</b></label>
+                    <input [(ngModel)]="ngo.organizationType" type="text" name="orgType" required/><br><br>
+
+                    <label for="website"><b>Website *</b></label>
+                    <input [(ngModel)]="ngo.website" type="text" name="website" pattern="https://.*" title="enter in the format starting with https://" required/><br><br>
+
+                    <label for="contactNo"><b>Contact Number *</b></label>
+                   <input [(ngModel)]="ngo.contactNo" type="number" name="contactNo" pattern="[7-9]{1}[0-9]{9}" minlength="10"  required/><br><br>
+
+                    </fieldset>
+                    <br><br>
+                    
+                    <fieldset>
+                        <legend>Project In-Charge Details </legend>
+                        <label for="nameheadoforg"><b>Name of head of organization *</b></label>
+                        <input [(ngModel)]="ngo.nameheadoforg" type="text" name="nameheadoforg"  placeholder="Enter Name of head of organization" required/><br><br>
+
+                        <label for="email"><b>Email *</b></label>
+                        <input [(ngModel)]="ngo.email" name="email" type="email" placeholder="Enter email-id"   required /><br><br>
+
+                        <label for="contactNoprojectincharge"><b>Contact Number *</b></label>
+                        <input [(ngModel)]="ngo.contactNoprojectincharge" pattern="[7-9]{1}[0-9]{9}" maxlength="10" type="tel" name="contactNoprojectincharge"  required/><br><br>
+
+                    </fieldset>
+                    <br><br>
+
+
+                    <fieldset>
+                            <legend>Document Section</legend>
+                            <label for="registrationno"><b>Registration Number *</b></label>
+                            <input [(ngModel)]="ngo.registrationno" type="text" name="registrationno" required/><br><br>
+
+                            <label for="validfrom"><b>Valid from *</b></label>
+                            <input [(ngModel)]="ngo.validfrom" type="date" name="validfrom" required/><br><br>
+                            
+                            <label for="validtill"><b>Valid till *</b></label>
+                            <input [(ngModel)]="ngo.validtill" type="date" name="validtill" required/><br><br>
+                    -->
+                    </fieldset>
+        
+					<button value="Add" class="btn btn-md btn-default" onClick="validatePassword()">Submit</button> 
+				
+         
+    </form>
+</div>
+
+<h3 class="text-center"> {{ response }} </h3> 
+</body>
