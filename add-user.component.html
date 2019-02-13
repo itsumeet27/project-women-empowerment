@@ -1,0 +1,92 @@
+<div class="container">
+  <form #mform="ngForm" (ngSubmit)="add(mform)" class="form table-responsive" ngNativeValidate>
+    <div class="container">
+      <h1>Registration Page For User</h1>
+      <p><b>Please fill in this form to create an account.</b></p>
+      <hr>
+      
+      <fieldset>
+        <legend>Personal Details</legend>
+      <label for="name"><b>Name</b></label>
+      <input  [(ngModel)]="user.name" minlength="4" type="text" placeholder="Enter Name" name="name" required>
+
+      <label for="username"><b>Username</b></label>
+      <input  [(ngModel)]="user.username" type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="password"><b>Password</b></label>
+      <input [(ngModel)]="user.password" type="password" placeholder="Enter Password" name="password" required>
+
+      <label for="confirmPassword"><b>Confirm Password</b></label>
+      <input [(ngModel)]="user.confirmPassword" type="password" name="confirmPassword" required>
+
+    
+    
+      <label for="mobileNumber"><b>Mobile Number</b></label>
+     <input [(ngModel)]="user.mobileNumber" type="number" placeholder="Enter Your Mobile Number" name="mobileNumber" required>
+  
+      <label for="birthDate"><b>Date Of Birth</b></label>
+      <input [(ngModel)]="user.birthDate" type="date" placeholder="Enter Date Of Birth" name="birthDate" required>
+
+      <label for="designation"><b>Designation</b></label>
+      <input  [(ngModel)]="user.designation" type="text" placeholder="Enter designation" name="designation" required>
+
+      <label for="salary"><b>Salary</b></label>
+      <input  [(ngModel)]="user.salary" type="number" placeholder="Enter Current salary" name="salary" required>
+        
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Family Details</legend>
+      
+      <label for="familymembers"><b>No. of persons in family</b></label>
+      <input  [(ngModel)]="user.familymembers" type="number" placeholder="Enter No. of persons in family" name="familymembers" required>
+
+      <label for="headoffamily"><b>Head of the family</b></label>
+      <input  [(ngModel)]="user.headoffamily" type="text" placeholder="" name="headoffamily" required>
+
+
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Contact Details</legend>
+
+    <label for="emailid"><b>Email Id</b></label>
+    <input [(ngModel)]="user.emailid" type="email" placeholder="Enter Your emailid" name="emailid" required>
+
+    <label for="address"><b>Address *</b></label>
+    <textarea [(ngModel)]="user.address" type="text" name="address" required></textarea><br><br>
+
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Document Section</legend>
+
+      <label for="aadharNumber"><b>Aadhar Number</b></label>
+      <input [(ngModel)]="user.aadharNumber" type="text" pattern="^\d{4}\s\d{4}\s\d{4}$"  placeholder="Enter Your Aadhar Number" name="aadharNumber" required>
+
+      <label for="pannumber"><b>PAN Number</b></label>
+      <input [(ngModel)]="user.pannumber" type="text" pattern="^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$" placeholder="Enter Your PAN Number" name="pannumber" required>
+
+
+
+    </fieldset>
+<br>
+    <fieldset>
+      <legend>Training Course Details</legend>
+      <input type="radio" name="trainingcourse" value="agriculture" checked> Agriculture<br>
+      <input type="radio" name="trainingcourse" value="tailoring"> Tailoring<br>
+      <input type="radio" name="trainingcourse" value="stitching"> Stitching<br>
+
+    </fieldset>
+      <hr>
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+  
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+    
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+  </form>
+</div>
+<h3 class="text-center"> {{ response }} </h3>
