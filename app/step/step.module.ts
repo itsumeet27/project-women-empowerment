@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { TrainingComponent } from './pages/training.component';
 import { GuidelinesComponent } from './pages/guidelines.component';
 import { NgoComponent } from './pages/ngo.component';
+import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NgoComponent } from './pages/ngo.component';
     RegistrationComponent,
     TrainingComponent,
     GuidelinesComponent,
-    NgoComponent
+    NgoComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     CommonModule,

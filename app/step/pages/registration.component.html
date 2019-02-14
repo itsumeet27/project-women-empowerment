@@ -59,71 +59,111 @@
                     <table class="table table-striped table-condensed">
                         <tbody class="md-form">
                             <tr>
-                                <th> Name* </th>
-                                <td>
+                                <th> Name <span class="text-danger">*</span> </th>
+                                <td class="form-group" [class.has-error]="name.invalid && name.touched"
+                                    [class.text-success]="name.valid">
                                     <input [(ngModel)]="registration.name" class="form-control" id="name" name="name"
-                                        type="text" pattern="[a-zA-Z]*" autofocus="true" placeholder="Enter Your Name"
-                                        title="Enter only alphabets" required />
+                                        type="text" pattern="[a-zA-Z][a-zA-Z ]*" autofocus="true"
+                                        placeholder="Enter Your Name" title="Enter only alphabets" #name="ngModel"
+                                        required />
+                                    <span class="help-block red-text" *ngIf="name.invalid && name.touched">Name is
+                                        required</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th> UserName* </th>
-                                <td>
+                                <th> Username <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="username.invalid && username.touched"
+                                    [class.text-success]="username.valid">
                                     <input [(ngModel)]="registration.username" class="form-control" name="username"
-                                        id="username" type="text" pattern="[a-zA-Z]{1,15}"
-                                        placeholder="Enter Your Username" title="Enter only alphabets" required />
+                                        id="username" type="text" pattern="[a-zA-Z0-9]+"
+                                        placeholder="Enter Your Username" #username="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="username.invalid && username.touched">Username is required</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th> Password* </th>
-                                <td>
+                                <th> Password <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="password.invalid && password.touched"
+                                    [class.text-success]="password.valid">
                                     <input [(ngModel)]="registration.password" class="form-control" id="password"
-                                        name="password" type="password" placeholder="Enter Your Password" required />
+                                        name="password" type="password" placeholder="Enter Your Password"
+                                        #password="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="password.invalid && password.touched">Password is required</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th> ConfirmPassword* </th>
-                                <td>
+                                <th> ConfirmPassword <span class="text-danger">*</span></th>
+                                <td class="form-group"
+                                    [class.has-error]="confirmPassword.invalid && confirmPassword.touched"
+                                    [class.text-success]="confirmPassword.valid">
                                     <input [(ngModel)]="registration.confirmPassword" class="form-control"
                                         name="confirmPassword" id="confirmPassword" type="password"
-                                        placeholder="Re-Enter Your Password" required />
-                                    <span class="text-danger">{{array['password']}}</span>
+                                        placeholder="Re-Enter Your Password" appConfirmEqualValidator="password"
+                                        #confirmPassword="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="confirmPassword.errors?.required && confirmPassword.touched">Confirm
+                                        Password is
+                                        required</span>
+                                    <span class="text-danger help-block"
+                                        *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual">Password
+                                        do not match</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th> Mobile Number* </th>
-                                <td>
+                                <th> Mobile Number <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="mobileNumber.invalid && mobileNumber.touched"
+                                    [class.text-success]="mobileNumber.valid">
                                     <input [(ngModel)]="registration.mobileNumber" class="form-control" type="text"
                                         id="mobileNumber" placeholder="Enter Your Mobile Number" name="mobileNumber"
-                                        minlength="10" maxlength="10" (keypress)="keyPress($event)" required>
+                                        minlength="10" maxlength="10" #mobileNumber="ngModel"
+                                        (keypress)="keyPress($event)" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="mobileNumber.invalid && mobileNumber.touched">Mobile no. is
+                                        required</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th> Date Of Birth* </th>
-                                <td>
+                                <th> Date Of Birth <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="birthDate.invalid && birthDate.touched"
+                                    [class.text-success]="birthDate.valid">
                                     <input [(ngModel)]="registration.birthDate" class="form-control" type="date"
-                                        id="birthDate" placeholder="Enter Date Of Birth" name="birthDate" required>
+                                        id="birthDate" placeholder="Enter Date Of Birth" name="birthDate"
+                                        #birthDate="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="birthDate.invalid && birthDate.touched">Date is
+                                        required</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th> Designation* </th>
-                                <td>
+                                <th> Designation <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="designation.invalid && designation.touched"
+                                    [class.text-success]="designation.valid">
                                     <input [(ngModel)]="registration.designation" class="form-control" id="designation"
-                                        type="text" placeholder="Enter Your Designation" name="designation" required>
+                                        type="text" placeholder="Enter Your Designation" name="designation"
+                                        #designation="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="designation.invalid && designation.touched">Designation is
+                                        required</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th> Salary* </th>
-                                <td>
+                                <th> Salary <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="salary.invalid && salary.touched"
+                                [class.text-success]="salary.valid">
                                     <input [(ngModel)]="registration.salary" class="form-control" type="number"
                                         id="salary" min="0" (keypress)="keyPress($event)"
-                                        placeholder="Enter Current Salary" name="salary" required>
+                                        placeholder="Enter Current Salary" name="salary" #salary="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="salary.invalid && salary.touched">Salary is
+                                        required</span>
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td><input type="submit" value="Submit" class="btn btn-md btn-success" /></td>
+                                <td><input type="submit" value="Submit" class="btn btn-md btn-success"
+                                        [disabled]="mform.invalid" /></td>
                                 <td>
                                     <div class="container signin">
                                         <p class="lead text-center">Already have an account? <a class="nav-link"
