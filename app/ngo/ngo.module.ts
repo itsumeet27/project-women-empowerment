@@ -11,6 +11,7 @@ import { OrganizationsComponent } from './pages/organizations.component';
 import { SuccessComponent } from './pages/success.component';
 import { AddCourseService } from './pages/add-course-service';
 import { AddCourseComponent } from './pages/add-course.component';
+import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddCourseComponent } from './pages/add-course.component';
     RegistrationComponent,
     OrganizationsComponent,
     AddCourseComponent,
-    SuccessComponent
+    SuccessComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     CommonModule,

@@ -8,6 +8,7 @@ import { Registration } from './registration';
     styleUrls: ['../../css/bootstrap.min.css', '../../css/mdb.min.css','./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+    router: any;
     ngOnInit() {
 
     }
@@ -32,10 +33,6 @@ export class RegistrationComponent implements OnInit {
     add() {
 
         let confirm = true;
-        if (this.registration.confirmPassword != this.registration.password) {
-            confirm = false;
-            this.array['password'] = "Pasword does not match";
-        }
 
         if (confirm) {
 

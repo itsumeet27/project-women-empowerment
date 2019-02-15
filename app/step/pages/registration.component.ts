@@ -35,7 +35,7 @@ export class RegistrationComponent implements OnInit {
 
             this.ngs.sendToServer(this.registration).subscribe(
                 data => {
-                    //Take the response from server and storing in string variable
+                    
                     this.response = data['status'];
                     this.reloadPage();
                 }
