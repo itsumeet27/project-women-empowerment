@@ -29,20 +29,16 @@ export class RegistrationComponent implements OnInit {
 
     }
     add() {
-        let confirm = true;
 
-        if (confirm) {
+        this.ngs.sendToServer(this.registration).subscribe(
+            data => {
 
-            this.ngs.sendToServer(this.registration).subscribe(
-                data => {
-                    
-                    this.response = data['status'];
-                    this.reloadPage();
-                }
-            );
-        }
+                this.response = data['status'];
+                this.reloadPage();
+            }
+        );
     }
-    
+
     reloadPage() {
         window.location.href = './step/success';
     }
