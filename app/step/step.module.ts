@@ -11,6 +11,7 @@ import { GuidelinesComponent } from './pages/guidelines.component';
 import { NgoComponent } from './pages/ngo.component';
 import { SuccessComponent } from './pages/success.component';
 import { FetchCoursesService } from './pages/fetch-courses-service';
+import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FetchCoursesService } from './pages/fetch-courses-service';
     TrainingComponent,
     GuidelinesComponent,
     NgoComponent,
-    SuccessComponent
+    SuccessComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     CommonModule,
