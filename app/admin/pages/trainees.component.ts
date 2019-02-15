@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TraineesService } from './trainees-service';
-import { Trainees } from './trainees';
+import { Trainee } from './trainee';
 
 @Component({
   selector: 'trainees-page',
@@ -9,7 +9,7 @@ import { Trainees } from './trainees';
 })
 export class TraineesComponent implements OnInit {
 
-  trainees: Trainees[];
+  trainees: Trainee[];
 
 
   constructor(public ms: TraineesService) {

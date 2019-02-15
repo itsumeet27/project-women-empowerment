@@ -1,12 +1,14 @@
+//import { NgoLogin } from './ngologin';
+
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Trainee} from './trainee';
+import {Courses} from './courses';
 //import { AddngoLoginComponent } from './add-ngologin.component';
 
 
 @Injectable() //Dependency Injection
-export class TraineesService{
+export class FetchCoursesService{
     //This class will talk to server
 
 
@@ -16,9 +18,9 @@ export class TraineesService{
     }
 	
    
-    retriveFromServer(url:string):Observable<Trainee[]>{
+    retriveFromServer(url:string):Observable<Courses[]>{
         //our code to be communicated with the server will be here
-     return this.http.get<Trainee[]>(url)
+     return this.http.get<Courses[]>(url)
      
       }  
 }

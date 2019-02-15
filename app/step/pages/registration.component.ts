@@ -8,6 +8,7 @@ import { Registration } from './registration';
     styleUrls: ['../../css/bootstrap.min.css', '../../css/mdb.min.css', './registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+    router: any;
     ngOnInit() {
 
     }
@@ -40,8 +41,13 @@ export class RegistrationComponent implements OnInit {
                 data => {
                     //Take the response from server and storing in string variable
                     this.response = data['status'];
+                    this.reloadPage();
                 }
             );
         }
+    }
+    
+    reloadPage() {
+        window.location.href = './step/success';
     }
 }

@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { TrainingComponent } from './pages/training.component';
 import { GuidelinesComponent } from './pages/guidelines.component';
 import { NgoComponent } from './pages/ngo.component';
+import { SuccessComponent } from './pages/success.component';
+import { FetchCoursesService } from './pages/fetch-courses-service';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { NgoComponent } from './pages/ngo.component';
     RegistrationComponent,
     TrainingComponent,
     GuidelinesComponent,
-    NgoComponent
+    NgoComponent,
+    SuccessComponent
   ],
   imports: [
     CommonModule,
@@ -27,13 +30,14 @@ import { NgoComponent } from './pages/ngo.component';
       { path: 'step/guidelines', component: GuidelinesComponent },
       { path: 'step/training', component: TrainingComponent },
       { path: 'step/ngo', component: NgoComponent },
-      { path: 'step/registration', component: RegistrationComponent }
+      { path: 'step/registration', component: RegistrationComponent },
+      { path: 'step/success', component: SuccessComponent }
     ])
   ],
   exports: [
     StepComponent
   ],
-  providers: [HttpClient, RegistrationService],
+  providers: [HttpClient, RegistrationService, FetchCoursesService],
   bootstrap: [StepComponent]
 })
 export class StepModule { }

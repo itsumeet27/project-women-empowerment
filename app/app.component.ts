@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./css/bootstrap.min.css', './css/mdb.min.css']
+  styleUrls: ['./css/bootstrap.min.css', './css/mdb.min.css', './app.component.css']
 })
 export class AppComponent {
-  title = 'movie'
+  title = 'Ministry of Women and Child Development'
 }

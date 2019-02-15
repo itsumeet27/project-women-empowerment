@@ -5,7 +5,7 @@ import { Registration } from './registration';
 @Component({
     selector: 'registration-page',
     templateUrl: './registration.component.html',
-    styleUrls: ['../../css/bootstrap.min.css', '../../css/mdb.min.css']
+    styleUrls: ['../../css/bootstrap.min.css', '../../css/mdb.min.css','./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
     ngOnInit() {
@@ -43,8 +43,13 @@ export class RegistrationComponent implements OnInit {
                 data => {
                     //Take the response from server and storing in string variable
                     this.response = data['status'];
+                    this.reloadPage();
                 }
             );
         }
+    }
+
+    reloadPage() {
+        window.location.href = './ngo/success';
     }
 }
