@@ -12,7 +12,6 @@ import { AboutComponent } from './pages/about.component';
 import { FaqComponent } from './pages/faq.component';
 import { StepModule } from './step/step.module';
 import { NgoModule } from './ngo/ngo.module';
-import { LoginComponent } from './user/login.component';
 import { AdminModule } from './admin/admin.module';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { AdminModule } from './admin/admin.module';
     AboutComponent,
     LegislationComponent,
     FaqComponent,
-    LoginComponent,
     FooterComponent
   ],
   imports: [
@@ -37,7 +35,6 @@ import { AdminModule } from './admin/admin.module';
       { path: 'about', component: AboutComponent },
       { path: 'legislation', component: LegislationComponent },
       { path: 'faq', component: FaqComponent },
-      { path: 'login', component: LoginComponent }
     ])
   ],
   providers: [HttpClient],

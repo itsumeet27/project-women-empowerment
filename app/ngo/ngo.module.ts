@@ -12,6 +12,9 @@ import { SuccessComponent } from './pages/success.component';
 import { AddCourseService } from './pages/add-course-service';
 import { AddCourseComponent } from './pages/add-course.component';
 import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
+import { FundingComponent } from './pages/funding-norms.component';
+import { LoginComponent } from './pages/login.component';
+import { LoginService } from './pages/login-service';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.direct
     OrganizationsComponent,
     AddCourseComponent,
     SuccessComponent,
+    LoginComponent,
+    FundingComponent,
     ConfirmEqualValidatorDirective
   ],
   imports: [
@@ -31,15 +36,17 @@ import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.direct
       { path: 'ngo', component: NgoComponent },
       { path: 'ngo/criteria', component: CriteriaComponent },
       { path: 'ngo/organizations', component: OrganizationsComponent },
+      { path: 'ngo/funding-norms', component: FundingComponent },
       { path: 'ngo/add-course', component: AddCourseComponent },
       { path: 'ngo/registration', component: RegistrationComponent },
+      { path: 'ngo/login', component: LoginComponent },
       { path: 'ngo/success', component: SuccessComponent },
     ])
   ],
   exports: [
     NgoComponent
   ],
-  providers: [HttpClient, RegistrationService, AddCourseService],
+  providers: [HttpClient, RegistrationService, AddCourseService, LoginService],
   bootstrap: [NgoComponent]
 })
 export class NgoModule { }

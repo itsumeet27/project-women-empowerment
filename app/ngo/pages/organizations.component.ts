@@ -5,7 +5,7 @@ import { Ngo } from 'src/app/admin/pages/ngo';
 @Component({
   selector: 'ngo-organizations',
   templateUrl: './organizations.component.html',
-  styleUrls: ['../../css/bootstrap.min.css', '../../css/mdb.min.css']
+  styleUrls: ['../../css/bootstrap.min.css', '../../css/mdb.min.css','./organizations.component.css']
 })
 export class OrganizationsComponent implements OnInit{
     ngo: Ngo[];

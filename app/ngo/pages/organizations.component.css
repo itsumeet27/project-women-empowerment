@@ -6,14 +6,3 @@
     -o-background-size: cover;
     background-size: cover;
 }
-
-.register {
-    background: #ffffffbc;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
-}
-
-#content p, li {
-    text-align: justify;
-    line-height: 1.6em;
-}

@@ -12,6 +12,9 @@ import { NgoComponent } from './pages/ngo.component';
 import { SuccessComponent } from './pages/success.component';
 import { FetchCoursesService } from './pages/fetch-courses-service';
 import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
+import { LoginComponent } from './pages/login.component';
+import { LoginService } from './pages/login-service';
+
 
 
 @NgModule({
@@ -21,6 +24,7 @@ import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.direct
     TrainingComponent,
     GuidelinesComponent,
     NgoComponent,
+    LoginComponent,
     SuccessComponent,
     ConfirmEqualValidatorDirective
   ],
@@ -33,13 +37,14 @@ import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.direct
       { path: 'step/training', component: TrainingComponent },
       { path: 'step/ngo', component: NgoComponent },
       { path: 'step/registration', component: RegistrationComponent },
+      { path: 'step/login', component: LoginComponent },
       { path: 'step/success', component: SuccessComponent }
     ])
   ],
   exports: [
     StepComponent
   ],
-  providers: [HttpClient, RegistrationService, FetchCoursesService],
+  providers: [HttpClient, RegistrationService, FetchCoursesService, LoginService],
   bootstrap: [StepComponent]
 })
 export class StepModule { }
