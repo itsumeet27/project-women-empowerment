@@ -32,7 +32,7 @@
       <input  [(ngModel)]="user.salary" type="number" placeholder="Enter Current salary" name="salary" required>
         
       <label for="age"><b>Age</b></label>
-      <input  [(ngModel)]="user.age" type="number" placeholder="Enter your age" name="age" min="16" required>
+      <input  [(ngModel)]="user.age" type="number" placeholder="Enter your age" name="age" min="16" max="75" required>
 
     </fieldset>
 
@@ -85,13 +85,7 @@
 
     </fieldset>
 <br>
-    <fieldset>
-      <legend>Training Course Details</legend>
-      <input type="radio" name="trainingcourse" value="agriculture" checked> Agriculture<br>
-      <input type="radio" name="trainingcourse" value="tailoring"> Tailoring<br>
-      <input type="radio" name="trainingcourse" value="stitching"> Stitching<br>
-
-    </fieldset>
+   
       <hr>
       <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
   
