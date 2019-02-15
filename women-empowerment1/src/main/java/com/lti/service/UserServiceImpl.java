@@ -27,16 +27,16 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Transactional
-	public boolean verifyUser(User login) {
+	public User verifyUser(User login) {
 		String username = login.getUsername();
 		String password = login.getPassword();
 		boolean flag = false;
 		List<User> list = userRepository.fetchAll();
 		for (User x : list) {
 			if (username.equals(x.getUsername()) && password.equals(x.getPassword()))
-				flag = true;
+				return x;
 		}
-		return flag;
+		return null;
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WomenEmpowerment1Application {
 
 	public static void main(String[] args) {
+		System.out.println("Hello");
 		SpringApplication.run(WomenEmpowerment1Application.class, args);
 	}
 }

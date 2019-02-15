@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 @Entity
 @Table(name = "TBL_USER1")
 public class User {
@@ -16,7 +18,6 @@ public class User {
 	private String username;
 	private String password;
 	private String confirmPassword;
-	// private String adhaarNo;
 	private Double mobileNumber;
 	private String birthDate;
 	private String designation;
@@ -26,24 +27,8 @@ public class User {
 
 	}
 
-	// public String getAdhaarNo() {
-	// return adhaarNo;
-	// }
-
-	// public void setAdhaarNo(String adhaarNo) {
-	// this.adhaarNo = adhaarNo;
-	// }
-
 	public Double getMobileNumber() {
 		return mobileNumber;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public void setMobileNumber(Double mobileNumber) {

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lti.entity.Status;
 import com.lti.entity.NGO;
 import com.lti.service.NGOService;
 
@@ -34,10 +35,9 @@ public class NGOController {
 	@CrossOrigin
 	@RequestMapping(path = "/ngologin/verifyngo", method = RequestMethod.POST)
 	public String verifyNgo(@RequestBody NGO login) {
-		boolean flag = ngoService.verifyNgo(login);
-		if (flag) {
-			String flag1 = Boolean.toString(flag);
-			return "{\"status\" : \"Loged   Successfully!\"}";
+		NGO ngo = ngoService.verifyNgo(login);
+		if (ngo != null) {
+			return "{\"status\" : \"" + ngo.getName() + " you are logged in  Successfully!\"}";
 		} else {
 			return "{\"status\" : \"Sorry Your Details are incorrect!\"}";
 		}

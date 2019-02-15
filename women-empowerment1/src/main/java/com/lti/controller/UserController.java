@@ -36,10 +36,9 @@ public class UserController {
 	@CrossOrigin
 	@RequestMapping(path = "/userlogin/verifyuser", method = RequestMethod.POST)
 	public String verifyUser(@RequestBody User login) {
-		boolean flag = userService.verifyUser(login);
-		if (flag) {
-			String flag1 = Boolean.toString(flag);
-			return "{\"status\" : \"Loged   Successfully!\"}";
+		User user = userService.verifyUser(login);
+		if (user != null) {
+			return "{\"status\" : \"" + user.getName() + " you are logged in  Successfully!\"}";
 		} else {
 			return "{\"status\" : \"Sorry Your Details are incorrect!\"}";
 		}

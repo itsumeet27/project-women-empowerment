@@ -11,7 +11,7 @@ public interface UserService {
 
 	public User fetch(int id);
 
-	public boolean verifyUser(User login);
+	public User verifyUser(User login);
 
 	public List<User> fetchEach();
 

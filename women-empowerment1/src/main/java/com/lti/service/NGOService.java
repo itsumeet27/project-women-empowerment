@@ -10,7 +10,7 @@ public interface NGOService {
 
 	public NGO fetch(int id);
 
-	public boolean verifyNgo(NGO login);
+	public NGO verifyNgo(NGO login);
 
 	public List<NGO> fetchEach();
 
