@@ -13,6 +13,8 @@ import { FaqComponent } from './pages/faq.component';
 import { StepModule } from './step/step.module';
 import { NgoModule } from './ngo/ngo.module';
 import { AdminModule } from './admin/admin.module';
+import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
+import { NgoDashboardModule } from './ngo-dashboard/ngo-dashboard.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { AdminModule } from './admin/admin.module';
     FormsModule,
     HttpClientModule,
     StepModule,
+    UserDashboardModule,
+    NgoDashboardModule, 
     NgoModule,
     RouterModule.forRoot([
       { path: 'about', component: AboutComponent },

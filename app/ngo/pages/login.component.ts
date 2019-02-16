@@ -1,4 +1,4 @@
-import { Login } from './login';
+import { Login } from '../../login';
 import { Component } from '@angular/core';
 import { LoginService } from './login-service';
 
@@ -25,8 +25,13 @@ export class LoginComponent {
         this.ms.sendToServer(this.userlogin).subscribe(
             data => {
                 this.response = data['status'];
+                this.reloadPage();
             }
         );
+    }
+
+    reloadPage() {
+        window.location.href = './ngo-dashboard';
     }
 
 }

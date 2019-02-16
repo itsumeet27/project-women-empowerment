@@ -1,4 +1,4 @@
-import { Login } from './login';
+import { Login } from '../../login';
 import { Component } from '@angular/core';
 import { LoginService } from './login-service';
 
@@ -13,7 +13,6 @@ export class LoginComponent {
     password: string;
     id: number;
 
-
     userlogin: Login = new Login();
     response: string;
     constructor(public ms: LoginService) {
@@ -21,13 +20,17 @@ export class LoginComponent {
     }
 
     display() {
-
        
         this.ms.sendToServer(this.userlogin).subscribe(
             data => {
                 this.response = data['status'];
+                this.reloadPage();
             }
         );
+    }
+
+    reloadPage(){
+        window.location.href='./user-dashboard'
     }
 
 }
