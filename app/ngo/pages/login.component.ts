@@ -10,9 +10,9 @@ import { LoginService } from './login-service';
 
 export class LoginComponent {
     
+    userDetails: any;
     password: string;
     id: number;
-
 
     userlogin: Login = new Login();
     response: string;
@@ -21,6 +21,7 @@ export class LoginComponent {
     }
 
     display() {
+        window.localStorage.setItem('userDetails', JSON.stringify({token: this.userlogin, name: 'userDetails'}))
        
         this.ms.sendToServer(this.userlogin).subscribe(
             data => {

@@ -1,5 +1,4 @@
 <!-- Navbar -->
-<h4 class="">Welcome {{response}}</h4>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#"><strong>USER</strong></a>
@@ -24,7 +23,7 @@
         </ul>
         <form class="form-inline">
           <div class="md-form my-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <a class="nav-link white-text" [routerLink]="['/user-dashboard']" title="">Welcome, <i>{{response}}</i></a>
           </div>
         </form>
       </div>

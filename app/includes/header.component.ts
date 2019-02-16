@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Login } from '../login';
 
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../css/bootstrap.min.css', '../css/mdb.min.css']
 })
 export class HeaderComponent implements OnInit {
-  ngOnInit(){
 
+  ngOnInit(){
+    
   }
+  
 }
