@@ -15,6 +15,7 @@ import { NgoModule } from './ngo/ngo.module';
 import { AdminModule } from './admin/admin.module';
 import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { NgoDashboardModule } from './ngo-dashboard/ngo-dashboard.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgoDashboardModule } from './ngo-dashboard/ngo-dashboard.module';
     AboutComponent,
     LegislationComponent,
     FaqComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { NgoDashboardModule } from './ngo-dashboard/ngo-dashboard.module';
     NgoDashboardModule, 
     NgoModule,
     RouterModule.forRoot([
+      { path: '', component: HomeComponent},
       { path: 'about', component: AboutComponent },
       { path: 'legislation', component: LegislationComponent },
       { path: 'faq', component: FaqComponent },

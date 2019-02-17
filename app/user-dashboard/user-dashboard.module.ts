@@ -25,7 +25,6 @@ import { ContactService } from './pages/contact-service';
     CommonModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: UserDashboardComponent },
       { path: 'user-dashboard', component: UserDashboardComponent },
       { path: 'user-dashboard/apply-course', component: AddCourseComponent },
       { path: 'user-dashboard/document-details', component: AddDocumentComponent },
