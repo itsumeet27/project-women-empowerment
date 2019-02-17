@@ -18,4 +18,9 @@ export class NgoDashboardComponent implements OnInit{
     this.userlogin = JSON.parse(localStorage.getItem('userDetails'))['token'];
     this.response = this.userlogin.username;
   }
+
+  logout(){
+    localStorage.removeItem('userDetails');
+    window.location.href='/ngo';
+  }
 }

@@ -29,6 +29,14 @@ public class NGO {
 	private Double contactNo;
 	private String projectInCharge;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public NGO() {
 	}
 

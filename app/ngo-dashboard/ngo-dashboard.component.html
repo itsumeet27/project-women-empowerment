@@ -18,7 +18,10 @@
       </ul>
       <form class="form-inline">
         <div class="md-form my-0">
-          <a class="nav-link white-text" [routerLink]="['/user-dashboard']" title="">Welcome, <i>{{response}}</i></a>
+          <a class="nav-link white-text" [routerLink]="['/ngo-dashboard']" title="">Welcome, <i>{{response}}</i></a>
+        </div>
+        <div class="md-form my-0">
+          <a class="nav-link white-text" title="" (click) = "logout()">Logout</a>
         </div>
       </form>
     </div>

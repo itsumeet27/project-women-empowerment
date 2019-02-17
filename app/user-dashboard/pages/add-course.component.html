@@ -40,6 +40,7 @@
             <div class="register">
                 <form #mform="ngForm" (ngSubmit)="add()" name="step-form" class="form table-responsive"
                     ngNativeValidate>
+                    <p class="text-success text-center lead">{{response}}</p>
                     <h3 class="h3-responsive text-center p-3">Register for Training Courses</h3>
                     <p class="text-center red-text">All fields marked with * are mandatory</p>
                     <table class="table table-striped table-condensed">
@@ -108,4 +109,3 @@
         </div>
     </div>
 </div>
-<h4 class="h4-responsive text-center text-success p-2">{{response}}</h4>

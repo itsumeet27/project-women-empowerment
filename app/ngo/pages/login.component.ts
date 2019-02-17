@@ -1,6 +1,7 @@
 import { Login } from '../../login';
 import { Component } from '@angular/core';
 import { LoginService } from './login-service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'ngo-login',
@@ -10,29 +11,30 @@ import { LoginService } from './login-service';
 
 export class LoginComponent {
     
-    userDetails: any;
-    password: string;
-    id: number;
-
-    userlogin: Login = new Login();
+    login: Login = new Login();
+    responses: ResponseType;
     response: string;
-    constructor(public ms: LoginService) {
+
+    constructor(private loginService: LoginService, private router: Router) {
 
     }
 
-    display() {
-        window.localStorage.setItem('userDetails', JSON.stringify({token: this.userlogin, name: 'userDetails'}))
-       
-        this.ms.sendToServer(this.userlogin).subscribe(
-            data => {
-                this.response = data['status'];
-                this.reloadPage();
+    verifyUser() {
+
+        window.localStorage.setItem('userDetails', JSON.stringify({token: this.login, name: 'userDetails'}));
+        
+        this.loginService.verifyMe(this.login)
+            .subscribe(data => {                
+
+                if (data.responseType == "VERIFIED") {
+                    window.location.href='/ngo-dashboard';
+                }
+                else {
+                    this.router.navigate(['/ngo/login']);
+                    this.response = "Please enter valid username and password";
+                }
             }
-        );
-    }
-
-    reloadPage() {
-        window.location.href = './ngo-dashboard';
+        )
     }
 
 }

@@ -7,7 +7,7 @@ import { Login } from '../login';
   styleUrls: ['../css/bootstrap.min.css', '../css/mdb.min.css','./main.component.css']
 })
 export class MainComponent implements OnInit{
-  userlogin: Login = new Login();
+  login: Login = new Login();
   response: string;
 
   ngOnInit() {
@@ -15,7 +15,7 @@ export class MainComponent implements OnInit{
   }
 
   displayName() {
-    this.userlogin = JSON.parse(localStorage.getItem('userDetails'))['token'];
-    this.response = this.userlogin.username;
+    this.login = JSON.parse(localStorage.getItem('userDetails'))['token'];
+    this.response = this.login.username;
   }
 }

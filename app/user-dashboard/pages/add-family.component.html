@@ -1,0 +1,43 @@
+<div class="container">
+    <form #mform="ngForm" (ngSubmit)="add()" class="form table-responsive" ngNativeValidate>
+
+        
+        <fieldset>
+            <legend>Family Details</legend>
+
+            <label for="noOfMembers"><b>No. of persons in family</b></label>
+            <input [(ngModel)]="userfamilydetails.noOfMembers" type="number"
+                placeholder="Enter No. of persons in family" name="familymembers" required>
+
+            <label for="noOfChildren"><b>No. of Children in family</b></label>
+            <input [(ngModel)]="userfamilydetails.noOfChildren" type="number"
+                placeholder="Enter No. of children in family" name="children" required>
+
+            <label for="criteria"><b> Any one of the criteria of the following which is being satisfied to get enrolled
+                    in our training
+                    scheme:</b><br />
+
+                <select name="criteria" [(ngModel)]="userfamilydetails.criteria" required>
+                    <option value="Boy Child's age less then or equal to 5 years">Boy
+                        Child's age less then or equal to 5 years</option>
+                    <option value="Girl child's age less than or equal to 18 years">Girl
+                        child's age less than or equal to 18 years</option>
+
+                </select>
+
+            </label> <br>
+
+            <label for="annualIncome"><b>Annual Income of the family</b></label>
+            <input [(ngModel)]="userfamilydetails.annualIncome" type="number" name="annualincome" required>
+
+        </fieldset>
+
+        <hr>
+
+
+        <button type="submit" class="registerbtn">Register</button>
+
+
+    </form>
+    <p>{{response}}</p>
+</div>

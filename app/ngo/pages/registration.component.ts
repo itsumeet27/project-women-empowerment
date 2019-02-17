@@ -47,6 +47,6 @@ export class RegistrationComponent implements OnInit {
     }
 
     reloadPage() {
-        window.location.href = './ngo/success';
+        window.location.href = './ngo/login';
     }
 }

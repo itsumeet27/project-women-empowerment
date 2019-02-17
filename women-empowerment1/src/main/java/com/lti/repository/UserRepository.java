@@ -13,4 +13,6 @@ public interface UserRepository {
 
 	public List<User> fetchAll();
 
+	public User fetchUser(User login);
+
 }

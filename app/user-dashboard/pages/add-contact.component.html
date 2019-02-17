@@ -1,0 +1,24 @@
+<div class="container">
+        <form #mform="ngForm" (ngSubmit)="add(mform)" class="form table-responsive" ngNativeValidate>
+      
+          <fieldset>
+            <legend>Contact Details</legend>
+      
+            <label for="emailid"><b>Email Id</b></label>
+            <input [(ngModel)]="usercontactdetails.emailId" type="email" placeholder="Enter Your emailid" name="emailid"
+              required />
+      
+            <label for="address"><b>Address *</b></label>
+            <textarea [(ngModel)]="usercontactdetails.address" type="text" name="address" required></textarea><br>
+      
+          </fieldset>
+      
+          <hr>
+          
+      
+          <button type="submit" class="registerbtn">Register</button>
+      
+      
+        </form>
+        {{response}}
+      </div>

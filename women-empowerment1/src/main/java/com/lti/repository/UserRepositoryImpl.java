@@ -27,6 +27,14 @@ public class UserRepositoryImpl implements UserRepository {
 
 	}
 
+	public User fetchUser(User login) {
+		Query query = entityManager.createQuery(
+				"Select user from User as user where user.username=:username and user.password=:password ");
+		query.setParameter("username", login.getUsername());
+		query.setParameter("password", login.getPassword());
+		return (User) query.getSingleResult();
+	}
+
 	@Transactional
 	public List<User> fetchAll() {
 		Query q = entityManager.createQuery("select obj from User as obj");

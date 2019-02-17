@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Login } from '../login';
+import { Login } from 'src/app/login';
 
 @Component({
   selector: 'user-dashboard',
@@ -8,7 +8,7 @@ import { Login } from '../login';
 })
 export class UserDashboardComponent implements OnInit {
 
-  userlogin: Login = new Login();
+  login: Login = new Login();
   response: string;
 
   ngOnInit() {
@@ -16,8 +16,13 @@ export class UserDashboardComponent implements OnInit {
   }
 
   displayName() {
-    this.userlogin = JSON.parse(localStorage.getItem('userDetails'))['token'];
-    this.response = this.userlogin.username;
+    this.login = JSON.parse(localStorage.getItem('userDetails'))['token']
+    this.response = this.login.username;
+  }
+
+  logout(){
+    localStorage.removeItem('userDetails');
+    window.location.href='/step';
   }
 
 }

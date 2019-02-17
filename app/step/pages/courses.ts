@@ -10,7 +10,9 @@ export class Courses{
                 public duration?:string,
                 public description?:string,
                 public ngoName?:string,
-                public location?:string
+                public location?:string,
+                public startDate?:string,
+                public endDate?:string
                 
         ){
         

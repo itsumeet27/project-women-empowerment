@@ -11,14 +11,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.repository.NGORepository;
 import com.lti.entity.NGO;
+import com.lti.entity.ResponseDTO;
+import com.lti.entity.ResponseType;
+import com.lti.entity.User;
 
 @Service
 public class NGOServiceImpl implements NGOService {
 
 	@Autowired
 	private NGORepository ngoRepo;
-
-	private EntityManager entityManager;
 
 	@Transactional
 	public void add(NGO ngo) {
@@ -40,6 +41,28 @@ public class NGOServiceImpl implements NGOService {
 				return x;
 		}
 		return null;
+	}
+
+	@Transactional
+	public ResponseDTO confirmLogin(NGO ngo) {
+		ResponseDTO responseDTO = new ResponseDTO();
+
+		try {
+			List<NGO> usr = ngoRepo.fetchAll();
+			for (NGO u : usr) {
+				if (u.getUsername().equals(ngo.getUsername()) && u.getPassword().equals(ngo.getPassword())) {
+					responseDTO.setResponseType(ResponseType.VERIFIED);
+					responseDTO.setUsername(u.getUsername());
+					return responseDTO;
+				}
+			}
+			responseDTO.setResponseType(ResponseType.NOTVERIFIED);
+			return responseDTO;
+		} catch (Exception e) {
+			e.printStackTrace();
+			responseDTO.setResponseType(ResponseType.ERROR);
+			return responseDTO;
+		}
 	}
 
 	@Override

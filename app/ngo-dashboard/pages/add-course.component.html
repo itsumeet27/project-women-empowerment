@@ -55,7 +55,7 @@
                                         <option value="stiching">Stiching</option>
                                     </select>
                                     <span class="help-block red-text"
-                                        *ngIf="coursename.invalid && coursename.touched">Course name is
+                                        *ngIf="coursename.invalid && coursename.touched">Course type is
                                         required</span>
                                 </td>
                             </tr>
@@ -102,6 +102,28 @@
                                         placeholder="Enter the location" name="location" #location="ngModel" required>
                                     <span class="help-block red-text"
                                         *ngIf="location.invalid && location.touched">Location is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Start Date <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="startDate.invalid && startDate.touched"
+                                [class.text-success]="startDate.valid">
+                                    <input [(ngModel)]="course.startDate" type="date" class="form-control"
+                                        placeholder="Enter the Start Date of the course" name="startDate" #startDate="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="startDate.invalid && startDate.touched">Start Date is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>End Date <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="endDate.invalid && endDate.touched"
+                                [class.text-success]="endDate.valid">
+                                    <input [(ngModel)]="course.endDate" type="date" class="form-control"
+                                        placeholder="Enter the End Date of the course" name="endDate" #endDate="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="endDate.invalid && endDate.touched">End Date is
                                         required</span>
                                 </td>
                             </tr>

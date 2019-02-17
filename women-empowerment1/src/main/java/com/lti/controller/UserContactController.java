@@ -23,7 +23,7 @@ public class UserContactController {
 	@RequestMapping(path = "/userContact/add", method = RequestMethod.POST)
 	public String add(@RequestBody UserContactDetails ucd) {
 		userContactService.add(ucd);
-		return "{\"status\" : \"User Family  Details  Added Successfully!\"}";
+		return "{\"status\" : \"User Contact  Details  Added Successfully!\"}";
 	}
 
 	@RequestMapping(path = "/userContact/fetch", method = RequestMethod.GET)

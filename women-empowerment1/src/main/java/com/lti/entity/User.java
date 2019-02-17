@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.UniqueElements;
 
 @Entity
-@Table(name = "TBL_USER1")
+@Table(name = "TBL_USER")
 public class User {
 
 	@Id
@@ -22,6 +22,14 @@ public class User {
 	private String birthDate;
 	private String designation;
 	private Double salary;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public User() {
 

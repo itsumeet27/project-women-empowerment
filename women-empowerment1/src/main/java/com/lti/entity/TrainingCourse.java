@@ -17,6 +17,24 @@ public class TrainingCourse {
 	private String description;
 	private String ngoName;
 	private String location;
+	private String startDate;
+	private String endDate;
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
 
 	public String getLocation() {
 		return location;

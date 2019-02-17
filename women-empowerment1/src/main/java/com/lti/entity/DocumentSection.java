@@ -1,6 +1,7 @@
 package com.lti.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +10,9 @@ import javax.persistence.Table;
 public class DocumentSection {
 
 	@Id
+	@GeneratedValue
 	private int id;
+
 	private String adhaarNo;
 	private String panCardNo;
 

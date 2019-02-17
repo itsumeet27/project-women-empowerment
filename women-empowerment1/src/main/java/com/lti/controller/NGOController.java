@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.entity.Status;
+import com.lti.entity.User;
 import com.lti.entity.NGO;
+import com.lti.entity.ResponseDTO;
 import com.lti.service.NGOService;
 
 @RestController
@@ -41,6 +43,15 @@ public class NGOController {
 		} else {
 			return "{\"status\" : \"Sorry Your Details are incorrect!\"}";
 		}
+	}
+
+	@CrossOrigin
+	@RequestMapping(path = "/ngoVerify/verify", method = RequestMethod.POST)
+	public ResponseDTO verify(@RequestBody NGO ngo) {
+
+		ResponseDTO responseDTO = ngoService.confirmLogin(ngo);
+		return responseDTO;
+
 	}
 
 	@RequestMapping(path = "/ngo/fetch", method = RequestMethod.GET)

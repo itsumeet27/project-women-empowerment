@@ -11,23 +11,17 @@ import { Login } from 'src/app/login';
 
 export class AddCourseComponent {
 
-    userlogin: Login = new Login();
     response: string;
 
     ngOnInit() {
-        this.displayName();
-    }
-
-    displayName() {
-        this.userlogin = JSON.parse(localStorage.getItem('userDetails'))['token'];
-        this.response = this.userlogin.username;
+       
     }
 
     usercourse: UserCourse = new UserCourse();
     constructor(private us: AddCourseService) {
 
     }
-    add(mform) {
+    add() {
         this.us.sendToServer(this.usercourse).subscribe(
             data => {
                 //Take the response from server and storing in string variable

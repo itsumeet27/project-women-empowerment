@@ -6,15 +6,16 @@
                     <h3 class="h3-responsive text-center p-2">Login to your dashboard</h3>
                 </div>
                 <div class="card-body">
-                    <form #mform="ngForm" (ngSubmit)="display()" name="step-form" class="form table-responsive"
+                    <form #mform="ngForm" (ngSubmit)="verifyUser()" name="step-form" class="form table-responsive"
                         ngNativeValidate>
+                        <p class="text-center p-3 text-danger">{{response}}</p>
                         <table class="table table-bordered md-form">
                             <tr>
                                 <th>Username <span class="text-danger">*</span></th>
                                 <td class="form-group" [class.has-error]="username.invalid && username.touched"
                                     [class.text-success]="username.valid">
-                                    <input [(ngModel)]="userlogin.username" type="text" class="form-control"
-                                        name="username" pattern="[a-zA-Z0-9]+" placeholder="Enter Username"
+                                    <input [(ngModel)]="login.username" type="text" class="form-control"
+                                        name="username" pattern="[a-zA-Z0-9]+" autofocus placeholder="Enter Username"
                                         #username="ngModel" required />
                                     <span class="help-block red-text"
                                         *ngIf="username.invalid && username.touched">Username is required</span>
@@ -24,7 +25,7 @@
                                 <th>Password <span class="text-danger">*</span></th>
                                 <td class="form-group" [class.has-error]="password.invalid && password.touched"
                                     [class.text-success]="password.valid">
-                                    <input [(ngModel)]="userlogin.password" class="form-control" id="password"
+                                    <input [(ngModel)]="login.password" class="form-control" id="password"
                                         name="password" type="password" placeholder="Enter Your Password"
                                         #password="ngModel" required />
                                     <span class="help-block red-text"
@@ -61,4 +62,3 @@
         </div>
     </div>
 </div>
-<h4 class="h4-responsive text-center p-3">{{response}}</h4>

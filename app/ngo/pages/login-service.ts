@@ -1,20 +1,24 @@
 import { Login } from '../../login';
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Response } from 'src/app/response';
 
-
-@Injectable() 
-export class LoginService{
-
-    constructor(private http:HttpClient)
-    {
-            
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  
+  @Injectable()
+  export class LoginService {
+    login: Login[];
+    
+    constructor(private http: HttpClient) {
     }
-	
-    sendToServer(login:Login){
-     let url = "http://localhost:8051/ngologin/verifyngo";
-     return this.http.post(url,login);
-     
-      }    
-}
+  
+    verifyMe(login: Login) : Observable<Response> {
+      let url = 'http://localhost:8051/ngoVerify/verify';
+      return this.http.post<Response>(url, login);
+  
+    }
+  }
+  
