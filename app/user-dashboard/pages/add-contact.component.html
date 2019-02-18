@@ -1,24 +1,50 @@
-<div class="container">
-        <form #mform="ngForm" (ngSubmit)="add(mform)" class="form table-responsive" ngNativeValidate>
-      
-          <fieldset>
-            <legend>Contact Details</legend>
-      
-            <label for="emailid"><b>Email Id</b></label>
-            <input [(ngModel)]="usercontactdetails.emailId" type="email" placeholder="Enter Your emailid" name="emailid"
-              required />
-      
-            <label for="address"><b>Address *</b></label>
-            <textarea [(ngModel)]="usercontactdetails.address" type="text" name="address" required></textarea><br>
-      
-          </fieldset>
-      
-          <hr>
-          
-      
-          <button type="submit" class="registerbtn">Register</button>
-      
-      
-        </form>
-        {{response}}
+<div class="container-fluid" id="registration-step">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+      <div class="register">
+        <div class="card">
+          <form #mform="ngForm" (ngSubmit)="add()" name="step-form" class="form table-responsive" ngNativeValidate>
+            <div class="card-header">
+              <h3 class="h3-responsive text-center p-3">Add Contact Details</h3>
+            </div>
+            <div class="card-body">
+              <p class="text-center red-text">All fields marked with * are mandatory</p>
+              <p class="text-success text-center lead">{{response}}</p>
+              <table class="table table-striped table-condensed">
+                <tbody class="md-form">
+                  <tr>
+                    <th>Email <span class="text-danger">*</span></th>
+                    <td class="form-group" [class.has-error]="emailId.invalid && emailId.touched"
+                      [class.text-success]="emailId.valid">
+                      <input [(ngModel)]="usercontactdetails.emailId" type="email" class="form-control"
+                        placeholder="Enter Email" name="emailId" autofocus #emailId="ngModel" required>
+                      <span class="help-block red-text" *ngIf="emailId.invalid && emailId.touched">Email is
+                        required</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> Address <span class="text-danger">*</span></th>
+                    <td class="form-group" [class.has-error]="address.invalid && address.touched"
+                      [class.text-success]="address.valid">
+                      <textarea [(ngModel)]="usercontactdetails.address" class="form-control" name="address" type="text"
+                        class="form-control" placeholder="Enter Address of NGO" #address="ngModel" required></textarea>
+                      <span class="help-block red-text" *ngIf="address.invalid && address.touched">
+                        Address is
+                        required</span>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td><input type="submit" value="Submit" class="btn btn-md btn-success" [disabled]="mform.invalid" />
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
+  </div>
+</div>

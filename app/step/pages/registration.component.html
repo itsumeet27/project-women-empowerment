@@ -106,8 +106,8 @@
                                 <td class="form-group" [class.has-error]="birthDate.invalid && birthDate.touched"
                                     [class.text-success]="birthDate.valid">
                                     <input [(ngModel)]="registration.birthDate" class="form-control" type="date"
-                                        id="birthDate" placeholder="Enter Date Of Birth" name="birthDate" 
-                                        #birthDate="ngModel" required>
+                                        min="01/01/2003" id="birthDate" placeholder="Enter Date Of Birth"
+                                        name="birthDate" #birthDate="ngModel" required>
                                     <span class="help-block red-text"
                                         *ngIf="birthDate.invalid && birthDate.touched">Date is
                                         required</span>

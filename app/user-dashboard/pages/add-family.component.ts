@@ -4,7 +4,7 @@ import { FamilyService } from './family-service';
 @Component({
 selector :'add-family',
 templateUrl:'./add-family.component.html',
-styleUrls: []
+styleUrls: ['../../css/bootstrap.min.css', '../../css/mdb.min.css','./add-family.component.css']
 })
 
 export class AddFamilyDetailsComponent{
@@ -13,6 +13,17 @@ export class AddFamilyDetailsComponent{
     constructor(private ms: FamilyService){
 
     }
+
+    
+    keyPress(event: any) {
+        const pattern = /[0-9\+\-\ ]/;
+        let inputChar = String.fromCharCode(event.charCode);
+        if (event.keyCode != 8 && !pattern.test(inputChar)) {
+            event.preventDefault();
+        }
+    }
+    
+
     add(){
         this.ms.sendToServer(this.userfamilydetails).subscribe(
             data => {

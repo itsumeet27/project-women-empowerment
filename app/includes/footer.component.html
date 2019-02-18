@@ -6,9 +6,7 @@
         <!--Grid row-->
         <div class="row py-3 d-flex align-items-center">
           <!--Grid column-->
-          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0 white-text" style="font-weight: 400">Get connected with us on social networks!</h6>
-          </div>
+          
           <!--Grid column-->
 
           <!--Grid column-->
@@ -38,58 +36,76 @@
     <div class="container mt-5 mb-4 text-center text-md-left">
       <div class="row mt-3">
         <!--First column-->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4">
-          <h6 class="text-uppercase font-weight-bold">
-            <strong>Who We Are</strong>
-          </h6>
-          <hr class="blue-grey accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="">About Us</a>
-          </p>
-          <p>
-            <a href="">Blog</a>
-          </p>
-          <p>
-            <a href="">Contact Us</a>
-          </p>
-        </div>
-        <!--/.First column-->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <strong>Who We Are</strong>
+            </h6>
+            <hr class="blue-grey accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a [routerLink]="['/about']">About Us</a>
+            </p>
+            <p>
+              <a [routerLink]="['/step']">STEP</a>
+            </p>
+            <p>
+              <a [routerLink]="['/ngo']">NGO</a>
+            </p>
+          </div>
+          <!--/.First column-->
+  
+          <!--Second column-->
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <strong>Know more</strong>
+            </h6>
+            <hr class="blue-grey accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a [routerLink]="['/step/registration']">STEP registration</a>
+            </p>
+            <p>
+              <a [routerLink]="['/ngo/registration']">NGO registration</a>
+            </p>
+            <p>
+              <a [routerLink]="['/legislation']">Legislations & Policy</a>
+            </p>
+          </div>
+          <!--/.Second column-->
+  
+          <!--Third column-->
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <strong>Useful links</strong>
+            </h6>
+            <hr class="blue-grey accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a [routerLink]="['/step/training']">Training Sector</a>
+            </p>
+            <p>
+                <a [routerLink]="['/ngo/funding-norms']">Funding Norms</a>
+              </p>
+            <p>
+              <a [routerLink]="['/faq']">FAQ</a>
+            </p>          
+          </div>
+          <!--/.Third column-->
 
-        <!--Second column-->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mx-auto mb-4">
-          <h6 class="text-uppercase font-weight-bold">
-            <strong>Know more</strong>
-          </h6>
-          <hr class="blue-grey accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a [routerLink]="['/ngo']">NGO's</a>
-          </p>
-          <p>
-            <a [routerLink]="['/step']">STEP</a>
-          </p>
-          <p>
-            <a [routerLink]="['/legislation']">Legislations & Policy</a>
-          </p>
-        </div>
-        <!--/.Second column-->
-
-        <!--Third column-->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mx-auto mb-4">
-          <h6 class="text-uppercase font-weight-bold">
-            <strong>Useful links</strong>
-          </h6>
-          <hr class="blue-grey accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="">Help</a>
-          </p>
-          <p>
-            <a [routerLink]="['/faq']">FAQ</a>
-          </p>
-          <p>
-            <a href="">Terms and Conditions</a>
-          </p>          
-        </div>
-        <!--/.Third column-->
+          <!--Fourth column-->
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mx-auto mb-4">
+              <h6 class="text-uppercase font-weight-bold">
+                <strong>Read More</strong>
+              </h6>
+              <hr class="blue-grey accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <a [routerLink]="['/step/guidelines']">Guidelines</a>
+              </p>
+              <p>
+                  <a [routerLink]="['/ngo/organizations']">Organizations</a>
+                </p>
+              <p>
+                <a [routerLink]="['/ngo/criteria']">Criteria</a>
+              </p>          
+            </div>
+            <!--/.Fourth column-->
 
       </div>
     </div>
