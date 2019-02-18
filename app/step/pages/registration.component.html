@@ -130,8 +130,8 @@
                                 <td class="form-group" [class.has-error]="salary.invalid && salary.touched"
                                     [class.text-success]="salary.valid">
                                     <input [(ngModel)]="registration.salary" class="form-control" type="number"
-                                        id="salary" min="0" (keypress)="keyPress($event)"
-                                        placeholder="Enter Current Salary" name="salary" #salary="ngModel" required>
+                                        id="salary" min="0" max="50000" (keypress)="keyPress($event)"
+                                        placeholder="Enter Current Monthly Salary" name="salary" #salary="ngModel" required>
                                     <span class="help-block red-text" *ngIf="salary.invalid && salary.touched">Salary is
                                         required</span>
                                 </td>

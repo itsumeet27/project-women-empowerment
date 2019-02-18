@@ -65,7 +65,7 @@
                                             [class.has-error]="annualIncome.invalid && annualIncome.touched"
                                             [class.text-success]="annualIncome.valid">
                                             <input [(ngModel)]="userfamilydetails.annualIncome" class="form-control"
-                                                name="annualIncome" type="text" class="form-control"
+                                                name="annualIncome" type="text" class="form-control" min="0" max="100000"
                                                 (keypress)="keyPress($event)" placeholder="Enter Annual Income"
                                                 #annualIncome="ngModel" required>
                                             <span class="help-block red-text"
