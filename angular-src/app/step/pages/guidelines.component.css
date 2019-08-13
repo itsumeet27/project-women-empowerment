@@ -1,0 +1,12 @@
+.ngo-step{
+    width: 100%;background: url('../../../assets/images/background-step.jpg')no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#content p, li {
+    text-align: justify;
+    line-height: 1.6em;
+}

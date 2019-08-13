@@ -1,0 +1,158 @@
+<div class="container-fluid" id="registration-step">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="h4-responsive text-center p-2">Eligibility Criteria</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul type="disc">
+                            <li>Working women, who may be single, widowed, divorced, separated, married but whose
+                                husband or immediate family does not reside in the same city/area. preference may be
+                                given to women from disadvantaged sections of the society. There should be also
+                                provision for reservation of seats for physically challenged beneficiaries</li>
+                            <li>Women who are under training for job provided the total training period does not exceed
+                                one year. This is only on the condition that there is vacancy available after
+                                accommodating working women. The number of women under training for job should not
+                                exceed 30% of the total capacity. </li>
+                            <li>Girls up to the age of 18 years and boys up to the age of 5 years, accompanying working
+                                mothers will be provided accommodation, with their mothers. Working mothers may also
+                                avail of the services of the Day Care Centre, as provided under the scheme. </li>
+                            <li>Working Women are entitled to hostel facilities provided their gross income does
+                                not exceed Rs. 50,000/- consolidated (gross) per month in metropolitan cities, or Rs
+                                35,000/- consolidated (gross) per month, in any other place. </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="register">
+                <form #mform="ngForm" (ngSubmit)="add()" name="step-form" class="form table-responsive"
+                    ngNativeValidate>
+                    <h3 class="h3-responsive text-center p-3">STEP Registration</h3>
+                    <p class="text-center red-text">All fields marked with * are mandatory</p>
+                    <table class="table table-striped table-condensed">
+                        <tbody class="md-form">
+                            <tr>
+                                <th> Name <span class="text-danger">*</span> </th>
+                                <td class="form-group" [class.has-error]="name.invalid && name.touched"
+                                    [class.text-success]="name.valid">
+                                    <input [(ngModel)]="registration.name" class="form-control" id="name" name="name"
+                                        type="text" pattern="[a-zA-Z][a-zA-Z ]*" autofocus="true"
+                                        placeholder="Enter Your Name" title="Enter only alphabets" #name="ngModel"
+                                        required />
+                                    <span class="help-block red-text" *ngIf="name.invalid && name.touched">Name is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Username <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="username.invalid && username.touched"
+                                    [class.text-success]="username.valid">
+                                    <input [(ngModel)]="registration.username" class="form-control" name="username"
+                                        id="username" type="text" pattern="[a-zA-Z0-9]+"
+                                        placeholder="Enter Your Username" #username="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="username.invalid && username.touched">Username is required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Password <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="password.invalid && password.touched"
+                                    [class.text-success]="password.valid">
+                                    <input [(ngModel)]="registration.password" class="form-control" id="password"
+                                        name="password" type="password" placeholder="Enter Your Password"
+                                        #password="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="password.invalid && password.touched">Password is required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> ConfirmPassword <span class="text-danger">*</span></th>
+                                <td class="form-group"
+                                    [class.has-error]="confirmPassword.invalid && confirmPassword.touched"
+                                    [class.text-success]="confirmPassword.valid">
+                                    <input [(ngModel)]="registration.confirmPassword" class="form-control"
+                                        name="confirmPassword" id="confirmPassword" type="password"
+                                        placeholder="Re-Enter Your Password" appConfirmEqualValidator="password"
+                                        #confirmPassword="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="confirmPassword.errors?.required && confirmPassword.touched">Confirm
+                                        Password is
+                                        required</span>
+                                    <span class="text-danger help-block"
+                                        *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual">Password
+                                        do not match</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Mobile Number <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="mobileNumber.invalid && mobileNumber.touched"
+                                    [class.text-success]="mobileNumber.valid">
+                                    <input [(ngModel)]="registration.mobileNumber" class="form-control" type="text"
+                                        id="mobileNumber" placeholder="Enter Your Mobile Number" name="mobileNumber"
+                                        minlength="10" maxlength="10" #mobileNumber="ngModel"
+                                        (keypress)="keyPress($event)" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="mobileNumber.invalid && mobileNumber.touched">Mobile no. is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Date Of Birth <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="birthDate.invalid && birthDate.touched"
+                                    [class.text-success]="birthDate.valid">
+                                    <input [(ngModel)]="registration.birthDate" class="form-control" type="date"
+                                        min="01/01/2003" id="birthDate" placeholder="Enter Date Of Birth"
+                                        name="birthDate" #birthDate="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="birthDate.invalid && birthDate.touched">Date is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Designation <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="designation.invalid && designation.touched"
+                                    [class.text-success]="designation.valid">
+                                    <input [(ngModel)]="registration.designation" class="form-control" id="designation"
+                                        type="text" placeholder="Enter Your Designation" name="designation"
+                                        #designation="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="designation.invalid && designation.touched">Designation is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Salary <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="salary.invalid && salary.touched"
+                                    [class.text-success]="salary.valid">
+                                    <input [(ngModel)]="registration.salary" class="form-control" type="number"
+                                        id="salary" min="0" max="50000" (keypress)="keyPress($event)"
+                                        placeholder="Enter Current Monthly Salary" name="salary" #salary="ngModel" required>
+                                    <span class="help-block red-text" *ngIf="salary.invalid && salary.touched">Salary is
+                                        required</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><input type="submit" value="Submit" class="btn btn-md btn-success"
+                                        [disabled]="mform.invalid" /></td>
+                                <td>
+                                    <div class="container signin">
+                                        <p class="lead text-center">Already have an account? <a class="nav-link"
+                                                [routerLink]="['/step/login']" class="text-primary">Log in</a>.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 class='text-center text-success p-2'> {{ response }} </h3>

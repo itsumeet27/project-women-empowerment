@@ -1,0 +1,33 @@
+<br>
+<div class="card table-responsive">
+    <div class="card-header">
+        <h3 class="text-center p-3 h3-responsive">Trainee Registrations</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Mobile</th>
+                <th>Birth Date</th>
+                <th>Designation</th>
+                <th>Salary</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of trainees">
+                    <td>{{x.id}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.username}}</td>
+                    <td>{{x.password}}</td>
+                    <td>{{x.mobileNumber}}</td>
+                    <td>{{x.birthDate}}</td>
+                    <td>{{x.designation}}</td>
+                    <td>{{x.salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>

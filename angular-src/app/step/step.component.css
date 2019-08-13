@@ -1,0 +1,20 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  #content{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+  }
+
+  img{
+    width: 200px!important;
+    height: 200px!important;
+  }
+
+  p{
+    text-align: justify;
+    line-height: 1.6em;
+}

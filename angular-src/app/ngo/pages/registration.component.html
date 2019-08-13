@@ -1,0 +1,174 @@
+<div class="container-fluid" id="registration-step">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="h4-responsive text-center p-2">Why should we register?</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul type="disc">
+                            <li>In principle, an NGO does not have to register itself to perform charitable, welfare or
+                                developmental activities.</li>
+                            <li>There are some specific types of activities that can only be carried out if the NGO is
+                                registered under the country's specific acts or laws governing NGOs (particularly
+                                related to fund-raising).</li>
+                            <li>Due to obligations required of a registered NGO, the registration process leads to the
+                                development of systematic thinking and functioning of NGOs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="h4-responsive text-center p-2">What are the benefits?</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul type="disc">
+                            <li>Registered NGOs obtain legal status in order to enable them to interact at the official
+                                level
+                            </li>
+                            <li>The NGO can open a bank account in the name of the organization, or sign contracts in
+                                the name
+                                of the organization.</li>
+                            <li>A registered NGO can also qualify for financial assistance from government agencies and
+                                local,
+                                national and international donors.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="register">
+                <form #mform="ngForm" (ngSubmit)="add()" name="step-form" class="form table-responsive"
+                    ngNativeValidate>
+                    <h3 class="h3-responsive text-center p-3">NGO Registration</h3>
+                    <p class="text-center red-text">All fields marked with * are mandatory</p>
+                    <table class="table table-striped table-condensed">
+                        <tbody class="md-form">
+                            <tr>
+                                <th> Name <span class="text-danger">*</span> </th>
+                                <td class="form-group" [class.has-error]="name.invalid && name.touched"
+                                    [class.text-success]="name.valid">
+                                    <input [(ngModel)]="registration.name" type="text" class="form-control" name="name"
+                                        pattern="[a-zA-Z][a-zA-Z ]*" placeholder="Name of NGO"
+                                        title="Enter only alphabets" autofocus="true" #name="ngModel" required />
+                                    <span class="help-block red-text" *ngIf="name.invalid && name.touched">Name is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Username <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="username.invalid && username.touched"
+                                    [class.text-success]="username.valid">
+                                    <input [(ngModel)]="registration.username" type="text" class="form-control"
+                                        name="username" pattern="[a-zA-Z0-9]+" placeholder="NGO Username"
+                                        #username="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="username.invalid && username.touched">Username is required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Password <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="password.invalid && password.touched"
+                                    [class.text-success]="password.valid">
+                                    <input [(ngModel)]="registration.password" class="form-control" id="password"
+                                        name="password" type="password" placeholder="Enter Your Password"
+                                        #password="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="password.invalid && password.touched">Password is required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> ConfirmPassword <span class="text-danger">*</span></th>
+                                <td class="form-group"
+                                    [class.has-error]="confirmPassword.invalid && confirmPassword.touched"
+                                    [class.text-success]="confirmPassword.valid">
+                                    <input [(ngModel)]="registration.confirmPassword" class="form-control"
+                                        name="confirmPassword" id="confirmPassword" type="password"
+                                        placeholder="Re-Enter Your Password" appConfirmEqualValidator="password"
+                                        #confirmPassword="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="confirmPassword.errors?.required && confirmPassword.touched">Confirm
+                                        Password is
+                                        required</span>
+                                    <span class="text-danger help-block"
+                                        *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual">Password
+                                        do not match</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Address <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="address.invalid && address.touched"
+                                    [class.text-success]="address.valid">
+                                    <textarea [(ngModel)]="registration.address" class="form-control" name="address"
+                                        type="text" class="form-control" placeholder="Enter Address of NGO"
+                                        #address="ngModel" required></textarea>
+                                    <span class="help-block red-text" *ngIf="address.invalid && address.touched">NGO
+                                        Address is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Organization Type <span class="text-danger">*</span></th>
+                                <td class="form-group"
+                                    [class.has-error]="organizationType.invalid && organizationType.touched"
+                                    [class.text-success]="organizationType.valid">
+                                    <input [(ngModel)]="registration.organizationType" type="text" class="form-control"
+                                        name="organizationType" id="organizationType" pattern="[a-zA-Z][a-zA-Z ]*"
+                                        title="Enter only alphabets" placeholder="Enter Organization Type"
+                                        #organizationType="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="organizationType.invalid && organizationType.touched">Organization Type
+                                        is
+                                        required</span>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> Contact No. <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="contactNo.invalid && contactNo.touched"
+                                    [class.text-success]="contactNo.valid">
+                                    <input [(ngModel)]="registration.contactNo" class="form-control" type="text"
+                                        id="contactNo" placeholder="Enter Your Mobile Number" name="contactNo"
+                                        minlength="10" maxlength="10" #contactNo="ngModel" (keypress)="keyPress($event)"
+                                        required>
+                                    <span class="help-block red-text"
+                                        *ngIf="contactNo.invalid && contactNo.touched">Contact No. is
+                                        required</span>
+                                </td>
+                            <tr>
+                                <th> Project in Charge <span class="text-danger">*</span> </th>
+                                <td class="form-group"
+                                    [class.has-error]="projectInCharge.invalid && projectInCharge.touched"
+                                    [class.text-success]="projectInCharge.valid">
+                                    <input [(ngModel)]="registration.projectInCharge" class="form-control"
+                                        id="projectInCharge" name="projectInCharge" type="text"
+                                        pattern="[a-zA-Z][a-zA-Z ]*" placeholder="Enter Project in Charge"
+                                        title="Enter only alphabets" #projectInCharge="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="projectInCharge.invalid && projectInCharge.touched">Project in Charge is
+                                        required</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><input type="submit" value="Submit" class="btn btn-md btn-success"
+                                        [disabled]="mform.invalid" /></td>
+                                <td>
+                                    <div class="container signin">
+                                        <p class="lead text-center">Already have an account? <a class="nav-link"
+                                                [routerLink]="['/ngo/login']" class="text-primary">Log in</a>.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 class='text-center text-success p-2'> {{ response }} </h3>

@@ -1,0 +1,17 @@
+#about-container {
+    width: 100%;
+    background: url('../../assets/images/background-legislation.jpg')no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card-body p {
+    line-height: 1.5em;
+    text-align: justify
+}
+
+.content p {
+    line-height: 1.5em;
+}

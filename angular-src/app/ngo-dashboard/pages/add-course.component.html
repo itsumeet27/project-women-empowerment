@@ -1,0 +1,142 @@
+<div class="container-fluid" id="registration-step">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="h4-responsive text-center p-2">What are the training courses for?</h4>
+                </div>
+                <div class="card-body">
+                    <ul type="disc">
+                        <li>The training course provided by an NGO will be provided to the user who registers for our
+                            STEP programme</li>
+                        <li>These courses are primarily for women who want to start earning from themselves and work
+                            independently to support their family and their future</li>
+                        <li>The courses provided by an NGO will act as a skill development for all the hard working
+                            women.</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="h4-responsive text-center p-2">What are the basic requirements for adding a course?</h4>
+                </div>
+                <div class="card-body">
+                    <ul type="disc">
+                        <li>A training course option should be provided by NGO among the three: </li>
+                        <ul type="disc">
+                            <li>Agriculture</li>
+                            <li>Tailoring</li>
+                            <li>Stitching</li>
+                        </ul>
+                        <li>Every training course provided should have a Start date, End date along with the duration of
+                            the training</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="register">
+                <form #mform="ngForm" (ngSubmit)="add(mform)" name="step-form" class="form table-responsive"
+                    ngNativeValidate>
+                    <h3 class="h3-responsive text-center p-3">Add Training Courses</h3>
+                    <p class="text-center red-text">All fields marked with * are mandatory</p>
+                    <table class="table table-striped table-condensed">
+                        <tbody class="md-form">
+                            <tr>
+                                <th>Course Provided <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="coursename.invalid && coursename.touched"
+                                    [class.text-success]="coursename.valid">
+                                    <select name="coursename" [(ngModel)]="course.courseName" class="form-control"
+                                        #coursename="ngModel" autofocus required>
+                                        <option value="agriculture">Agriculture</option>
+                                        <option value="tailoring">Tailoring</option>
+                                        <option value="stiching">Stiching</option>
+                                    </select>
+                                    <span class="help-block red-text"
+                                        *ngIf="coursename.invalid && coursename.touched">Course type is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Duration (in months) <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="duration.invalid && duration.touched"
+                                    [class.text-success]="duration.valid">
+                                    <input [(ngModel)]="course.duration" type="text" class="form-control"
+                                        placeholder="Enter Duration(in months)" name="duration"
+                                        (keypress)="keyPress($event)" #duration="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="duration.invalid && duration.touched">Duration is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="description.invalid && description.touched"
+                                    [class.text-success]="description.valid">
+                                    <textarea [(ngModel)]="course.description" type="text" class="form-control"
+                                        name="description" placeholder="Enter Description of Course" #description="ngModel"
+                                        required></textarea>
+                                    <span class="help-block red-text"
+                                        *ngIf="description.invalid && description.touched">Description is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>NGO Name <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="ngoName.invalid && ngoName.touched"
+                                [class.text-success]="ngoName.valid">
+                                    <input [(ngModel)]="course.ngoName" type="text" class="form-control"
+                                        placeholder="Name of NGO" name="ngoName" #ngoName="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="ngoName.invalid && ngoName.touched">NGO name is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Location <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="location.invalid && location.touched"
+                                [class.text-success]="location.valid">
+                                    <input [(ngModel)]="course.location" type="text" class="form-control"
+                                        placeholder="Enter the location" name="location" #location="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="location.invalid && location.touched">Location is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Start Date <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="startDate.invalid && startDate.touched"
+                                [class.text-success]="startDate.valid">
+                                    <input [(ngModel)]="course.startDate" type="date" class="form-control"
+                                        placeholder="Enter the Start Date of the course" name="startDate" #startDate="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="startDate.invalid && startDate.touched">Start Date is
+                                        required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>End Date <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="endDate.invalid && endDate.touched"
+                                [class.text-success]="endDate.valid">
+                                    <input [(ngModel)]="course.endDate" type="date" class="form-control"
+                                        placeholder="Enter the End Date of the course" name="endDate" #endDate="ngModel" required>
+                                    <span class="help-block red-text"
+                                        *ngIf="endDate.invalid && endDate.touched">End Date is
+                                        required</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><button type="submit" class="btn btn-success btn-md" [disabled]="mform.invalid">Register this course</button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

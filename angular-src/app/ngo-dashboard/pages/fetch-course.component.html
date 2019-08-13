@@ -1,0 +1,25 @@
+<br>
+<div class="card table-responsive">
+    <div class="card-header">
+        <h3 class="text-center p-3 h3-responsive">User Registrations for Courses</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <th>Name</th>
+                <th>Mobile Number</th>
+                <th>NGO Name</th>
+                <th>Course Selected</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of regusers">
+                    <td> {{x.name}}</td>
+                    <td> {{x.mobileNumber}}</td>
+                    <td> {{x.ngoName}}</td>
+                    <td> {{x.course}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>

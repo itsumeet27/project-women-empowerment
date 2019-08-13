@@ -1,0 +1,46 @@
+<div id="registration-step" class="container-fluid p-3">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h3-responsive text-center p-2">Add Document Details</h3>
+                </div>
+                <div class="card-body">
+                    <form #mform="ngForm" (ngSubmit)="add()" name="add-document" class="form table-responsive"
+                        ngNativeValidate>
+                        <p class="text-center p-3 text-success">{{response}}</p>
+                        <table class="table table-bordered md-form">
+                            <tr>
+                                <th>Aadhar Number <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="adhaarNo.invalid && adhaarNo.touched"
+                                    [class.text-success]="adhaarNo.valid">
+                                    <input [(ngModel)]="document.adhaarNo" type="text" class="form-control"
+                                        name="adhaarNo" pattern="^\d{4}\d{4}\d{4}$" autofocus
+                                        placeholder="Enter Addhar No" #adhaarNo="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="adhaarNo.invalid && adhaarNo.touched">Aadhar No is required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Pan Card <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="panCardNo.invalid && panCardNo.touched"
+                                    [class.text-success]="panCardNo.valid">
+                                    <input [(ngModel)]="document.panCardNo" class="form-control" id="panCardNo"
+                                        name="panCardNo" pattern="^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$" type="text"
+                                        placeholder="Enter Your Pan Card Number" #panCardNo="ngModel" required />
+                                    <span class="help-block red-text" *ngIf="panCardNo.invalid && panCardNo.touched">Pan
+                                        Card is required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><button type="submit" class="btn btn-md btn-success"
+                                        [disabled]="mform.invalid">ADD</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

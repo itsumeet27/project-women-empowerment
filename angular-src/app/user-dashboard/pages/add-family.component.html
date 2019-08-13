@@ -1,0 +1,91 @@
+<div class="container-fluid" id="registration-step">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-2">
+            <div class="register">
+                <div class="card">
+                    <form #mform="ngForm" (ngSubmit)="add()" name="step-form" class="form table-responsive"
+                        ngNativeValidate>
+                        <div class="card-header">
+                            <h3 class="h3-responsive text-center p-3">Add Family Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-center red-text">All fields marked with * are mandatory</p>                            
+                            <p class="text-success text-center lead">{{response}}</p>
+                            <table class="table table-striped table-condensed">
+                                <tbody class="md-form">
+                                    <tr>
+                                        <th>No. of persons in family <span class="text-danger">*</span></th>
+                                        <td class="form-group"
+                                            [class.has-error]="noOfMembers.invalid && noOfMembers.touched"
+                                            [class.text-success]="noOfMembers.valid">
+                                            <input [(ngModel)]="userfamilydetails.noOfMembers" type="text"
+                                                class="form-control" placeholder="Enter no. of members"
+                                                (keypress)="keyPress($event)" name="noOfMembers" autofocus
+                                                #noOfMembers="ngModel" required>
+                                            <span class="help-block red-text"
+                                                *ngIf="noOfMembers.invalid && noOfMembers.touched">No. of Members is
+                                                required</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th> No. of Children in family <span class="text-danger">*</span></th>
+                                        <td class="form-group"
+                                            [class.has-error]="noOfChildren.invalid && noOfChildren.touched"
+                                            [class.text-success]="noOfChildren.valid">
+                                            <input [(ngModel)]="userfamilydetails.noOfChildren" class="form-control"
+                                                name="noOfChildren" type="text" class="form-control"
+                                                (keypress)="keyPress($event)" placeholder="Enter no. of children"
+                                                #noOfChildren="ngModel" required>
+                                            <span class="help-block red-text"
+                                                *ngIf="noOfChildren.invalid && noOfChildren.touched">
+                                                No. of children are required</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Any one of the criteria of the following which is being satisfied to get
+                                            enrolled
+                                            in our training
+                                            scheme: <span class="text-danger">*</span></th>
+                                        <td class="form-group" [class.has-error]="criteria.invalid && criteria.touched"
+                                            [class.text-success]="criteria.valid">
+                                            <select name="criteria" [(ngModel)]="userfamilydetails.criteria"
+                                                class="form-control" #criteria="ngModel" required>
+                                                <option value="Boy Child's age less then or equal to 5 years">Boy
+                                                    Child's age less then or equal to 5 years</option>
+                                                <option value="Girl child's age less than or equal to 18 years">Girl
+                                                    child's age less than or equal to 18 years</option>
+                                            </select>
+                                            <span class="help-block red-text"
+                                                *ngIf="criteria.invalid && criteria.touched">Criteria is required</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Annual Income of the Family <span class="text-danger">*</span></th>
+                                        <td class="form-group"
+                                            [class.has-error]="annualIncome.invalid && annualIncome.touched"
+                                            [class.text-success]="annualIncome.valid">
+                                            <input [(ngModel)]="userfamilydetails.annualIncome" class="form-control"
+                                                name="annualIncome" type="text" class="form-control" min="0" max="100000"
+                                                (keypress)="keyPress($event)" placeholder="Enter Annual Income"
+                                                #annualIncome="ngModel" required>
+                                            <span class="help-block red-text"
+                                                *ngIf="annualIncome.invalid && annualIncome.touched">
+                                                Annual Income is required</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td><input type="submit" value="Submit" class="btn btn-md btn-success"
+                                                [disabled]="mform.invalid" />
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

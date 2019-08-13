@@ -1,0 +1,20 @@
+#registration-step {
+    width: 100%;
+    background: url('../../../assets/images/background-step.jpg')no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.register {
+    background: #ffffffbc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+ul li {
+    list-style-type: square;
+    line-height: 1.6em;
+    text-align: justify;
+}

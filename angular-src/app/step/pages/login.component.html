@@ -1,0 +1,64 @@
+<div id="ngo-step" class="container-fluid p-3">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h3-responsive text-center p-2">Login to your dashboard</h3>
+                </div>
+                <div class="card-body">
+                    <form #mform="ngForm" (ngSubmit)="verifyUser()" name="step-form" class="form table-responsive"
+                        ngNativeValidate>
+                        <p class="text-center p-3 text-danger">{{response}}</p>
+                        <table class="table table-bordered md-form">
+                            <tr>
+                                <th>Username <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="username.invalid && username.touched"
+                                    [class.text-success]="username.valid">
+                                    <input [(ngModel)]="login.username" type="text" class="form-control"
+                                        name="username" pattern="[a-zA-Z0-9]+" autofocus placeholder="Enter Username"
+                                        #username="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="username.invalid && username.touched">Username is required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Password <span class="text-danger">*</span></th>
+                                <td class="form-group" [class.has-error]="password.invalid && password.touched"
+                                    [class.text-success]="password.valid">
+                                    <input [(ngModel)]="login.password" class="form-control" id="password"
+                                        name="password" type="password" placeholder="Enter Your Password"
+                                        #password="ngModel" required />
+                                    <span class="help-block red-text"
+                                        *ngIf="password.invalid && password.touched">Password is required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><button type="submit" class="btn btn-md btn-success"
+                                        [disabled]="mform.invalid">LOGIN</button></td>
+                                <td>Don't have an account? Register <a [routerLink]="['/step/registration']"
+                                        class="text-primary">here</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h3-responsive text-center p-2">Why to Log in?</h3>
+                </div>
+                <div class="card-body">
+                    <ul type="disc">
+                        <li>Access to your Dashboard</li>
+                        <li>Fill in the required details in your dashboard</li>
+                        <li>Register for the training program provided under STEP</li>
+                        <li>To browse through the STEP portal and the details, <a [routerLink]="['/step']"
+                                class="text-primary">click here</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

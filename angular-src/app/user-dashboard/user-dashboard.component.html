@@ -1,0 +1,37 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#"><strong>USER</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+      aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/user-dashboard/family-details']" title="Family Details">Family
+            Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/user-dashboard/contact-details']" title="Contact Details">Contact
+            Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/user-dashboard/document-details']" title="Add Document">Document Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/user-dashboard/apply-course']" title="Apply Course">Apply Course</a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <div class="md-form my-0">
+          <a class="nav-link white-text" [routerLink]="['/user-dashboard']" title="">Welcome, <i>{{response}}</i></a>
+        </div>
+        <div class="md-form my-0">
+          <a class="nav-link white-text" title="" (click) = "logout()">Logout</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Navbar -->
